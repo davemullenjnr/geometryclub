@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+  <body class="flex flex-column mvh-100">
+
+    <main class="flex-grow-1">
+      <section class="flex dark-mode hero py-4">
+        <div class="hero-container mx-auto px-3">
+          <div class="visual col-4 md-width-full">
+            <img id="phone" src="/assets/images/landing-page/Geometry-Club-on-Instagram-iPhone-X-grid.jpg" />
+          </div>
+          <div class="title col-7 flex flex-column md-width-full">
+            <img class="mb-2" title="Geometry Club" src="/assets/logo/geometry-club-text-logo.svg" alt="Geometry Club">
+            <p class="f6 mb-0 lh-20 grey-dark">Celebrating the beauty of architecture with precisely aligned photographs from around the world.</p>
+          </div>
+        </div>
+      </section>
+      <section class="py-4">
+        <div class="flex flex-column justify-center mx-auto px-3 container-thin">
+          <p class="f4 f3-md ls-tight lh-20 lh-18-md text-center">Geometry Club is an architecture photography project on <a class="link-profile" href="">Instagram</a> where people from around the world follow the <a class="link-profile" href="">guidelines</a>, <a class="link-profile" href="">submit</a> their photos, and join the club.</p>
+          <div class="mx-auto mt-1 inline-flex">
+            {% include link.html class="text-link" link="/" anchor="learn more" %}
+          </div>
+        </div>
+      </section>
+      <section class="py-4 light-grey-background">
+          <div class="flex flex-column justify-center mx-auto px-3 container-thin">
+            <div class="mb-2 inline-flex mx-auto app-icon">
+              {% include logo.html %}
+            </div>
+            <p class="f4 f3-md ls-tight bold text-center">Geometry Club iOS app</p>
+            <p class="f6 f5-md lh-20 lh-18-md text-center">Align your architecture photos with precision.</p>
+            <div class="mx-auto mt-1 inline-flex">
+              {% include link.html class="text-link" link="/" anchor="download" %}
+            </div>
+          </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+
+  </body>
+<script type="text/javascript">
+var iPhone = 'grid';
+
+function change(){
+  var image = document.getElementById('phone');
+  if(iPhone=='grid'){
+  image.src='/assets/images/landing-page/Geometry-Club-on-Instagram-iPhone-X-guidelines.jpg';
+  iPhone='guidelines';
+  }
+  else{
+  image.src='/assets/images/landing-page/Geometry-Club-on-Instagram-iPhone-X-grid.jpg';
+  iPhone='grid';
+  }
+}
+
+var timer = setInterval('change();',3000); 
+</script>
+</html>
