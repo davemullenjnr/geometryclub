@@ -1,0 +1,24 @@
+// Geometry Club theme
+
+// Color variables
+$white: #fff;
+$grey-light: #f1f1f1;
+$grey-mid: #aaa;
+$grey-dark: #666;
+$black: #111;
+
+// Config
+$color-background: $white !default;
+$color-foreground: $black !default;
+$color-title: $black !default;
+$color-body-text: $black !default;
+
+
+// Import sass partials (used in all themes)
+@import
+        "variables",
+        "base",
+        "components",
+        "utilities",
+        "flexbox"
+;

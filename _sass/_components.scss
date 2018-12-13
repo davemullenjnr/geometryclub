@@ -1,0 +1,219 @@
+// app icon
+.app-icon {
+  background-color: $black;
+  border-radius: 1.25rem;
+  width: 80px;
+  height: 80px;
+}
+
+svg.app-icon {
+  width: 68%;
+  height: 68%;
+  margin: auto;
+}
+
+// button
+.button {
+  border: 2px solid $grey-mid;
+  color: $grey-mid;
+  padding: $spacer-1 $spacer-2;
+  border-radius: $spacer;
+  transition: ease-in-out .1s;
+
+  &:hover {
+    color: $grey-dark;
+    border-color: $grey-dark;
+  }
+}
+
+// text-link
+.text-link {
+  font-weight: bold;
+  letter-spacing: .1rem;
+  font-size: 14px;
+  color: $grey-mid;
+  text-transform: uppercase;
+  border-bottom: 2px solid $grey-mid;
+  transition: ease-in-out .1s;
+  padding-top: $spacer-1; // creates more area to tap / click
+
+  &:hover {
+    color: $grey-dark;
+    border-bottom-color: $grey-dark;
+  }
+}
+
+// Hero
+.hero {
+  min-height: 100vh;
+}
+
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 52em;
+
+  @media (min-width: $breakpoint-lg) {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .visual {
+    max-width: 240px;
+  }
+  .title {
+    max-width: 520px;
+    align-items: center;
+
+    img {
+      max-width: 400px;
+    }
+    
+    p {
+      text-align: center;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+      align-items: flex-start;
+
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+
+// Footer Navigation
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  a {
+    padding-top: $spacer-1;
+    padding-bottom: $spacer-1;
+
+    @media (min-width: $breakpoint-md) {
+      padding: $spacer-2
+    }
+  }
+}
+
+// Video
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// Prose — Styles for the content.
+.prose {
+
+  p {
+    font-size: $body-font-size;
+    margin-bottom: $spacer-2;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: ($body-font-size * 1.25);
+      margin-bottom: $spacer-3;
+      width: (9 / 12 * 100%); // matches col-8
+    }
+
+  }
+
+}
+
+// Link styles
+
+// Link
+.link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Links within paragraph text
+.link-body {
+  border-bottom: 2px solid;
+  border-color: $grey-mid;
+  padding-bottom: $spacer / 2;
+  transition: ease-in-out .1s;
+
+  &:hover {
+    border-color: $grey-mid;
+  }
+}
+
+// Links on my profile page
+.link-profile {
+  text-decoration: underline;
+  text-decoration-color: $grey-dark;
+
+  &:hover {
+    color: $grey-dark;
+  }
+}
+
+// Links within caption text
+.link-caption {
+  border-bottom: 1px solid;
+  border-color: inherit;
+  padding-bottom: $spacer / 2;
+  transition: ease-in-out .1s;
+
+  &:hover {
+    color: $black;
+    border-color: $black;
+  }
+}
+
+// Link styles for navigation
+.link-primary {
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: ease-in-out .15s;
+
+  &:hover, &:active {
+    text-decoration: none;
+    border-bottom-color: $grey-mid;
+  }
+}
+
+.active {
+  text-decoration: none;
+  border-bottom-color: $grey-mid;
+}
+
+// Image as a link
+.link-image {
+  img {
+    transition: all 0.2s ease-out;
+  }
+  img:hover {
+    opacity: 0.8;
+  }
+}
+
+// Dark mode overrides
+.dark-mode {
+  background-color: $black;
+  color: $white;
+}
