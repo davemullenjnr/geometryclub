@@ -1,333 +1,87 @@
-nav {
-    /* background: #2e1f62; */
-    /* position: relative; */
-    /* margin: 0 auto; */
-}
-
 #flexmenu {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: $spacer * 3;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: $spacer * 3;
 }
 
 /* General Menu Styling */
 #flexmenu li,
 #flexmenu li a {
-    line-height: 1;
-    display: inline-block;
-    transition: all ease-in-out .3s;
+	line-height: 1;
+	display: inline-block;
+	transition: all ease-in-out .3s;
 }
 
 #flexmenu ul li a {
-    padding: $spacer * 2;
-    font-weight: 700;
+	padding: $spacer * 2;
+	font-weight: 700;
 }
-
-/*
-#flexmenu ul li.has-sub>a {
-    padding-right: 30px;
-}
-*/
-
-/* Drop icon */
-/*
-#flexmenu ul li.has-sub>a:after {
-    position: absolute;
-    top: 22px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: #F14F80;
-    content: '';
-}
-
-#flexmenu ul ul li.has-sub>a:after {
-    position: absolute;
-    top: 16px;
-    right: 11px;
-    width: 8px;
-    height: 2px;
-    display: block;
-    background: #FFF;
-    content: '';
-}
-
-#flexmenu>ul>li.has-sub>a:before {
-    position: absolute;
-    top: 19px;
-    right: 14px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #ddd;
-    transition: all .25s ease;
-}
-
-#flexmenu>ul>li.has-sub:hover>a:before {
-    top: 23px;
-    height: 0;
-}
-
-#flexmenu ul ul li.has-sub>a:before {
-    position: absolute;
-    top: 13px;
-    right: 14px;
-    display: block;
-    width: 2px;
-    height: 8px;
-    background: #FFF;
-    content: '';
-    transition: all .3s ease;
-}
-
-#flexmenu ul ul>li.has-sub:hover>a:before {
-    top: 17px;
-    height: 0;
-}
-
-#flexmenu ul ul li.has-sub:hover,
-#flexmenu ul li.has-sub ul li.has-sub ul li:hover {
-    background: #751CEC;
-}
-*/
-
-/* Submenu default states, removed by hover gives the animation */
-/*
-#flexmenu ul ul {
-    position: absolute;
-    left: -9999px;
-}
-
-#flexmenu li:hover>ul {
-    left: auto;
-}
-
-#flexmenu ul ul li {
-    height: 0;
-    background: #F14F80;
-    transition: all .25s ease
-}
-
-#flexmenu li:hover>ul>li {
-    height: 35px;
-}
-*/
-
-/* tertiary menu */
-/*
-#flexmenu ul ul ul {
-    margin-left: 100%;
-    top: 0;
-}
-
-#flexmenu ul ul li a {
-    padding: 11px 15px;
-    width: 170px;
-    font-size: 12px;
-    text-decoration: none;
-    color: #FFF;
-    font-weight: 400;
-}
-*/
 
 @media screen and (max-width: $breakpoint-lg) {
 
-    /* Center the logo and remove the bar */
-    .logo {
-        /* position: absolute; */
-        /* top: 0; */
-        /* left: 0; */
-        /* width: 100%; */
-        /* height: 46px; */
-        /* text-align: center; */
-        /* padding: 10px 0 0 0; */
-    }
+	/* Hamburger */
+	.button {
+		cursor: pointer;
+		padding: $spacer;
+	}
 
-    /* Hamburger */
-    .button {
-        /* background: #751CEC; */
-        /* width: 60px; */
-        /* height: 48px; */
-        /* position: absolute; */
-        /* right: 0; */
-        /* top: 0; */
-        cursor: pointer;
-        padding: $spacer;
-        /* z-index: 10000; */
-    }
+	.button:after {
+		display: block;
+		height: 6px;
+		width: 24px;
+		border-top: 2px solid $white;
+		border-bottom: 2px solid $white;
+		content: '';
+	}
 
-    .button:after {
-        /* position: absolute; */
-        /* top: 22px; */
-        /* right: 20px; */
-        display: block;
-        height: 6px;
-        width: 24px;
-        border-top: 2px solid $white;
-        border-bottom: 2px solid $white;
-        content: '';
-    }
+	.button:before {
+		transition: all .3s ease;
+		display: block;
+		height: 2px;
+		width: 24px;
+		background: $white;
+		margin-bottom: 6px;
+		content: '';
+	}
 
-    .button:before {
-        transition: all .3s ease;
-        /* position: absolute; */
-        /* top: 16px; */
-        /* right: 20px; */
-        display: block;
-        height: 2px;
-        width: 24px;
-        background: $white;
-        margin-bottom: 6px;
-        content: '';
-    }
+	/* Turn it into an X when open */
+	.button.menu-opened {
+		padding: $spacer * 2 $spacer;
+	}
 
-    /* Turn it into an X when open */
-    .button.menu-opened {
-        padding: $spacer * 2 $spacer;
-    }
+	.button.menu-opened:after {
+		transition: all .3s ease;
+		border: 0;
+		height: 2px;
+		width: 23px;
+		background: $white;
+		transform: rotate(45deg);
+	}
 
-    .button.menu-opened:after {
-        transition: all .3s ease;
-        border: 0;
-        height: 2px;
-        width: 23px;
-        background: $white;
-        transform: rotate(45deg);
-    }
+	.button.menu-opened:before {
+		width: 23px;
+		margin-bottom: -1px;
+		transform: rotate(-45deg);
+	}
 
-    .button.menu-opened:before {
-        width: 23px;
-        margin-bottom: -1px;
-        transform: rotate(-45deg);
-    }
+	#main-menu {
+		width: 100%;
+		margin-top: $spacer * 2;
+	}
 
-    #main-menu {
-        width: 100%;
-        margin-top: $spacer * 2;
-    }
+	/* reset horizontal styles */
+	#flexmenu ul {
+		display: none;
+	}
 
-    /* reset horizontal styles */
-    #flexmenu ul {
-        display: none;
-    }
+	#flexmenu ul li,
+	#flexmenu ul li a {
+		width: 100%;
+	}
 
-    #flexmenu ul li,
-    #flexmenu ul li a {
-        width: 100%;
-    }
-
-    #flexmenu ul li a {
-        padding: $spacer * 2 $spacer;
-    }
-
-    /*
-    #flexmenu ul ul li,
-    #flexmenu li:hover>ul>li {
-        height: auto;
-    }
-
-    #flexmenu ul ul li a {
-        padding-left: 25px;
-    }
-
-    #flexmenu ul ul ul li a {
-        padding-left: 35px;
-    }
-
-    #flexmenu ul ul,
-    #flexmenu ul ul ul {
-        position: relative;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        text-align: left;
-    }
-
-    #flexmenu ul ul ul li.active a {
-        border-left: none;
-    }
-
-    #flexmenu>ul>li.has-sub>ul>li.focus>a,
-    #flexmenu>ul ul>li.has-sub>ul>li.focus>a {
-        background: #262626;
-        transition: all .3s ease;
-    }
-    */
-
-    /* remove cross when menu item is toggled */
-    /*
-    #flexmenu>ul>li.has-sub>a:after,
-    #flexmenu>ul>li.has-sub>a:before,
-    #flexmenu ul ul>li.has-sub>a:after,
-    #flexmenu ul ul>li.has-sub>a:before {
-        display: none;
-    }
-    */
-
-    /* submenu toggles */
-    /*
-    #flexmenu .submenu-button {
-        position: absolute;
-        z-index: 99;
-        right: 0;
-        top: 0;
-        display: block;
-        border-left: 1px solid #444;
-        height: 46px;
-        width: 46px;
-        cursor: pointer;
-    }
-
-    #flexmenu ul ul .submenu-button {
-        height: 34px;
-        width: 34px;
-    }
-
-    #flexmenu .submenu-button:after {
-        position: absolute;
-        top: 22px;
-        right: 19px;
-        width: 8px;
-        height: 2px;
-        display: block;
-        background: #ddd;
-        content: '';
-    }
-
-    #flexmenu ul ul .submenu-button:after {
-        top: 15px;
-        right: 13px;
-    }
-
-    #flexmenu .submenu-button.submenu-opened:after {
-        background: #fff;
-    }
-
-    #flexmenu .submenu-button:before {
-        position: absolute;
-        top: 19px;
-        right: 22px;
-        display: block;
-        width: 2px;
-        height: 8px;
-        background: #ddd;
-        content: ''
-    }
-
-    #flexmenu ul ul .submenu-button:before {
-        top: 12px;
-        right: 16px;
-    }
-
-    #flexmenu .submenu-button.submenu-opened:before {
-        display: none;
-    }
-
-    .note {
-        font-size: 3vw;
-    }
-    */
+	#flexmenu ul li a {
+		padding: $spacer * 2 $spacer;
+	}
 }

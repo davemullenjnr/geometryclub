@@ -35,11 +35,7 @@ svg.app-icon {
   }
 }
 
-// Hero
-.hero {
-  min-height: 100vh;
-}
-
+// Hero 
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -146,25 +142,26 @@ svg.app-icon {
   }
 }
 
-// Links within paragraph text
-.link-body {
-  border-bottom: 2px solid;
+// Links with border-bottom
+.link-border {
+  border-bottom: 1px solid;
   border-color: $grey-mid;
   padding-bottom: $spacer / 2;
   transition: ease-in-out .1s;
 
   &:hover {
-    border-color: $grey-mid;
+    border-color: $black;
   }
 }
 
 // Links on my profile page
 .link-profile {
   text-decoration: underline;
-  text-decoration-color: $grey-dark;
+  text-decoration-color: $black;
 
   &:hover {
     color: $grey-dark;
+    text-decoration-color: $grey-mid;
   }
 }
 
