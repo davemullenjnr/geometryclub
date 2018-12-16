@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="container-thin mx-auto py-4 px-3">
+  <section class="mb-4">
+    <h2 class="f4 f3-md lh-10 mb-2">The Project</h2>
+    <p class="mb-2">
+      Geometry Club is a series of architecture photographs that are identical in composition, giving us a unique perspective to contrast and compare the differences in form, design, and construction of each facade.
+    </p>
+    <p class="mb-2">
+      Launched in 2014, Geometry Club currently has over 150 contributors in more than 30 countries. <span class="bold">The project relies on contributors from around the world to <a class="link-border" href="{{ site.baseurl }}/submit">submit</a> their photographs and join the club.</span> Featured photographs are published via <a class="link-border" href="https://instagram.com/geometryclub">Instagram</a>.
+    </p>
+    <p class="">
+      — <a class="italic link-border" href="https://davemullenjnr.co.uk/">Dave Mullen Jnr</a>.
+    </p>
+  </section>
+  <section class="mb-4">
+    <h2 class="f4 f3-md lh-10 mb-2">Contact</h2>
+    <p class="mb-3">
+      Please send any enquiries to <span class="bold">dave@geometryclub.org</span>
+    </p>
+  </section>
+  <section>
+    <h2 class="f4 f3-md lh-10 mb-2">Published</h2>
+      <ul class="flex flex-wrap list-reset">
+        {% for article in page.article %}
+          <li class="mb-2 sm-width-full col-4">
+            <a class="link-border" href="{{ article.url }}">{{ article.author }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+  </section>
+</div>
