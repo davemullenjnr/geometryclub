@@ -1,7 +1,7 @@
 title: Geometry Club
 email: dave@geometryclub.org
 description: Celebrating the beauty of architecture with precisely aligned photographs from around the world.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/geometryclub" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 social_username: geometryclub
 
@@ -9,6 +9,7 @@ social_username: geometryclub
 markdown: kramdown
 plugins:
   - jekyll-feed
+  - jekyll-autoprefixer
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
