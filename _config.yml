@@ -11,6 +11,20 @@ plugins:
   - jekyll-feed
   - jekyll-autoprefixer
 
+# Cloudinary
+cloudinary:
+  cloud_name: geometryclub
+  only_prod: true
+  verbose: true
+  origin_url: https://davemullenjnr.co.uk/geometryclub
+  presets:
+    default:
+      min_width: 400
+      max_width: 1200
+      fallback_max_width: 800
+      steps: 3
+      sizes: "(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
