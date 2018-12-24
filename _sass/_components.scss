@@ -1,3 +1,76 @@
+// Submit form box
+.submit-form {
+  background-color: $grey-light;
+  transition: .1s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+  }
+}
+
+// Guideline-box
+.guidelines {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $breakpoint-md) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.guideline-box {
+  border: 1px solid $black;
+  border-radius: 4px;
+  margin-bottom: $spacer-3;
+
+  @media (min-width: $breakpoint-md) {
+    width: 48%;
+  }
+}
+
+// Guides image swap
+.guide-container {
+  position: relative;
+  padding-bottom: 100%;
+  height: 0;
+}
+
+.guide-placeholder {
+  background-color: $grey-light;
+  width: 95%;
+  height: 95%;
+  position: absolute;
+  top: 2.5%;
+  left: 2.5%;
+}
+
+.guide-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  img.guide-overlay {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+#gc-photos {
+  width: 100%;
+  height: 100%;
+  padding: 2.5%;
+
+  img.sub {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+
 // app icon
 .app-icon-box {
   background-color: $black;

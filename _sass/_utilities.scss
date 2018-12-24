@@ -7,9 +7,9 @@
   letter-spacing: $display-spacing;
 }
 
-// Typescale
-
-// Headlines
+// Fonts
+.font-header { font-family: $header-font-family; }
+.font-body { font-family: $body-font-family; }
 
 
 // Base
@@ -104,6 +104,7 @@
 
 /* Border utilities */
 .border-radius { border-radius: $spacer / 4; }
+.border-radius-2 { border-radius: $spacer / 2; }
 .border-top { border-top: 1px solid $grey-dark; }
 
 /* Theme color utilities */
@@ -112,15 +113,10 @@
 .light-grey-background { background-color: $grey-light; }
 
 /* Layout utilities */
-.container {
-  max-width: $container-width-xl; 
-  
-  @media (max-width: 96em) {
-    max-width: $container-width;
-  }
-}
+.container-s { max-width: $container-width-s; }
+.container-m { max-width: $container-width-m; }
+.container-l { max-width: $container-width-l; }
 
-.container-thin { max-width: $container-width-s; }
 
 .col-1 { width: (1 / 12 * 100%); }
 .col-2 { width: (2 / 12 * 100%); }
