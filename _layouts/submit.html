@@ -1,0 +1,59 @@
+---
+layout: default
+---
+
+<div class="container-m mx-auto py-3 px-3">
+  <section class="col-8 md-width-full mx-auto mb-3">
+    <div class="guide-container">
+      <div class="guide-placeholder">
+        <!--placeholder color-->
+      </div>
+      <div class="guide-images">
+        <img src="{{ site.baseurl }}/assets/images/submit/Submit-to-Geometry-Club-Grid.png" class="guide-overlay" />
+        <div id="gc-photos">
+          <img src="{{ site.baseurl }}/assets/images/submit/Submit-to-Geometry-Club-photo-1.jpg" class="sub" />
+          <img src="{{ site.baseurl }}/assets/images/submit/Submit-to-Geometry-Club-photo-2.jpg" class="sub" />
+          <img src="{{ site.baseurl }}/assets/images/submit/Submit-to-Geometry-Club-photo-3.jpg" class="sub" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="container-m">
+    <h1 class="f7 grey-mid uppercase font-body ls-wide">Submit your photo</h1>
+    <p class="mb-3 f4 f3-md lh-15 ls-tight bold">
+      Compose your architecture photographs to meet these two guidelines and join the club!
+    </p>
+    <div class="guidelines mb-2">
+      {% include guideline-box.html title="Guideline 1" description="Your apex needs to be aligned centrally on both the X and Y axis." %}
+      {% include guideline-box.html title="Guideline 2" description="Edges should fall off the image at the same point, symmetrically." %}
+    </div>
+  </section>
+  <section class="col-8 md-width-full mx-auto mb-3">
+    <div class="submit-form px-2 py-2 border-radius-2">
+      <h2 class="font-body">Submit</h2>
+      <p class="mb-2 lh-15">
+        Please use the form below to submit your photo to Geometry Club.
+      </p>
+      {% include submit-form.html %}
+      <p class="grey-mid">By submitting, you agree for your image to be published on the <a href="https://instagram.com/geometryclub">@geometryclub</a> Instagram account, website, and any other promotional materials.</p>
+    </div>
+  </section>
+</div>
+
+<script type="text/javascript">
+  function swapImages() {
+    var $current = $('#gc-photos img:visible');
+    var $next = $current.next();
+    if($next.length === 0) {
+        $next = $('#gc-photos img:first');
+    }
+    $current.hide();
+    $next.show();
+  }
+</script>
+<script type="text/javascript">
+  $(function() {
+    setInterval('swapImages()', 1000);
+    $('#gc-photos img:first').fadeIn();
+  });
+</script>
