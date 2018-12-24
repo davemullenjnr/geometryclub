@@ -96,6 +96,10 @@
 .grey-mid { color: $grey-mid; }
 .grey-dark { color: $grey-dark; }
 
+// SVG Fill colours
+.fill-white { fill: $white; }
+.fill-black { fill: $black; }
+
 // list reset
 .list-reset {
   list-style: none;
@@ -174,6 +178,9 @@
 .px-4 { padding-left: $spacer-4; padding-right:  $spacer-4; }
 .py-4 { padding-top: $spacer-4;  padding-bottom: $spacer-4; }
 
+.px-5 { padding-left: $spacer-5; padding-right:  $spacer-5; }
+.py-5 { padding-top: $spacer-5;  padding-bottom: $spacer-5; }
+
 .pt-1 { padding-top: $spacer-1; }
 .pb-1 { padding-bottom: $spacer-1; }
 
@@ -185,6 +192,9 @@
 
 .pt-4 { padding-top: $spacer-4; }
 .pb-4 { padding-bottom: $spacer-4; }
+
+.pt-5 { padding-top: $spacer-5; }
+.pb-5 { padding-bottom: $spacer-5; }
 
 // Responsive padding
 @media (min-width: $breakpoint-md) {
@@ -203,6 +213,9 @@
   
   .px-md-4 { padding-left: $spacer-4; padding-right:  $spacer-4; }
   .py-md-4 { padding-top: $spacer-4;  padding-bottom: $spacer-4; }
+
+  .px-md-5 { padding-left: $spacer-4; padding-right:  $spacer-4; }
+  .py-md-5 { padding-top: $spacer-4;  padding-bottom: $spacer-4; }
 }
 
 @media (min-width: $breakpoint-lg) {
@@ -221,6 +234,9 @@
   
   .px-lg-4 { padding-left: $spacer-4; padding-right:  $spacer-4; }
   .py-lg-4 { padding-top: $spacer-4;  padding-bottom: $spacer-4; }
+
+  .px-lg-5 { padding-left: $spacer-5; padding-right:  $spacer-5; }
+  .py-lg-5 { padding-top: $spacer-5;  padding-bottom: $spacer-5; }
 }
 
 
@@ -253,6 +269,11 @@
 .mb-4 { margin-bottom: $spacer-4; }
 .ml-4 { margin-left: $spacer-4; }
 
+.mt-5 { margin-top: $spacer-5; }
+.mr-5 { margin-right: $spacer-5; }
+.mb-5 { margin-bottom: $spacer-5; }
+.ml-5 { margin-left: $spacer-5; }
+
 // Responsive margin
 @media (min-width: $breakpoint-md) {
   .my-md-auto { margin-top: auto; margin-bottom: auto; }
@@ -282,6 +303,11 @@
   .mr-md-4 { margin-right: $spacer-4; }
   .mb-md-4 { margin-bottom: $spacer-4; }
   .ml-md-4 { margin-left: $spacer-4; }
+
+  .mt-md-5 { margin-top: $spacer-5; }
+  .mr-md-5 { margin-right: $spacer-5; }
+  .mb-md-5 { margin-bottom: $spacer-5; }
+  .ml-md-5 { margin-left: $spacer-5; }
 }
 
 @media (min-width: $breakpoint-lg) {
@@ -312,6 +338,11 @@
   .mr-lg-4 { margin-right: $spacer-4; }
   .mb-lg-4 { margin-bottom: $spacer-4; }
   .ml-lg-4 { margin-left: $spacer-4; }
+
+  .mt-lg-5 { margin-top: $spacer-5; }
+  .mr-lg-5 { margin-right: $spacer-5; }
+  .mb-lg-5 { margin-bottom: $spacer-5; }
+  .ml-lg-5 { margin-left: $spacer-5; }
 }
 
 // Viewport Height
