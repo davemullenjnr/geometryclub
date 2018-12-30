@@ -1,17 +1,23 @@
 // Flexbox Utilities
 
-.flex { display: flex }
+.flex         { display: flex }
+.flex-row     { flex-direction: row }
+.flex-column  { flex-direction: column }
+.flex-wrap    { flex-wrap: wrap }
 
 @media (min-width: $breakpoint-md) {
-  .md-flex { display: flex }
+  .flex-md          { display: flex }
+  .flex-row-md      { flex-direction: row }
+  .flex-column-md   { flex-direction: column }
+  .flex-wrap-md     { flex-wrap: wrap }
 }
 
 @media (min-width: $breakpoint-lg) {
-  .lg-flex { display: flex }
+  .flex-lg          { display: flex }
+  .flex-row-lg      { flex-direction: row }
+  .flex-column-lg   { flex-direction: column }
+  .flex-wrap-lg     { flex-wrap: wrap }
 }
-
-.flex-column  { flex-direction: column }
-.flex-wrap    { flex-wrap: wrap }
 
 .items-start    { align-items: flex-start }
 .items-end      { align-items: flex-end }
