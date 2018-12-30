@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<section class="light-grey-background py-5">
+  <div class="container-s flex flex-column items-center px-3 mx-auto">
+    {% include text-logo.html class="fill-black col-8 sm-width-full" %}
+    <p class="f3 mb-3 ls-tight lh-12 text-center">Press Kit</p>
+    {% include press-kit-download.html %}
+  </div>
+</section>
+
+<img class="arrow" src="{{ site.baseurl }}/assets/logo/Arrow.svg" alt="arrow">
+
+<section class="py-4 container-s mx-auto px-3">
+  <div class="py-3">
+    <h2 class="f3 font-body">The Project</h2>
+    <p class="f6 f5-md mb-2">Geometry Club is a series of architecture photographs that are identical in composition, giving us a unique perspective to contrast and compare the differences in form, design, and construction of each facade.</p>
+    <p class="f6 f5-md">Launched in 2014, Geometry Club currently has over 150 contributors in more than 30 countries. The project relies on contributors from around the world to submit their photographs and join the club. Featured photographs are published via Instagram.</p>
+  </div>
+  <div class="py-3">
+    <h2 class="f3 font-body">Contact</h2>
+    <p class="f6 f5-md">
+      Dave Mullen Jnr<br />
+      dave@geometryclub.org<br />
+      +44 (0) 7793279803
+    </p>
+  </div>
+  <div class="py-3">
+    <h2 class="f3 font-body">Links</h2>
+    <p class="f6 f5-md">
+      <b>Website:</b> https://geometryclub.org/<br />
+      <b>Instagram:</b> @geometryclub
+    </p>
+  </div>
+  <div class="py-3">
+    <h2 class="f3 font-body">Images</h2>
+    {% for image in page.images %}
+    <div class="mb-2 mb-lg-3">
+      {% include press-image.html %}
+      {% if image.caption %}<p class="f7 f6-md mt-1 mb-2 mt-lg-2 mb-lg-3 text-right">{{ image.caption }}</p>{% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+
+
+
+<section class="light-grey-background py-5">
+  <div class="container-s flex flex-column px-3 mx-auto">
+    <p class="text-center mb-3">
+      The press kit contains the above imagery and plenty more. Email me if you’d like any more info/images. Please
+      always credit Geometry Club and link to the website <a class="link-border" href="https://geometryclub.org">geometryclub.org</a>
+      as the source.
+    </p>
+    {% include press-kit-download.html %}
+  </div>
+</section>

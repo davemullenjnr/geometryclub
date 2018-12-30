@@ -15,9 +15,58 @@ layout: default
 
 <img class="arrow" src="{{ site.baseurl }}/assets/logo/Arrow.svg" alt="arrow">
 
-<section class="py-5">
+<section class="pt-4 pb-5">
   <div class="container-s flex flex-column items-center px-3 mx-auto">
-    <p class="f3 ls-tight lh-20 lh-18-md text-center">A purpose-built camera app for your iPhone that helps to line up your @geometryclub photos, in real time.</p>
+    <p class="f4 f3-md ls-tight lh-20 lh-18-md text-center mb-3">A purpose-built camera app for your iPhone that helps to line up your <a class="link-border" href="https://instagram.com/geometryclub">@geometryclub</a> photos, in real time.</p>
+    <div class="col-9 sm-width-full">
+      <div class="main-carousel border-radius-2 box-shadow" data-flickity='{ "autoPlay": true, "wrapAround": true, "imagesLoaded": true, "percentPosition": false, "prevNextButtons": false}'>
+        {% for images in page.slide-one %}
+          {% include image-slides.html %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 
+<section class="light-grey-background pt-4 pb-5">
+  <div class="container-s flex flex-column items-center px-3 mx-auto">
+    <p class="f4 f3-md ls-tight lh-20 lh-18-md text-center mb-3">Photos taken with the app are neatly catalogued where you can easily view and share directly to Instagram.</p>
+    <div class="col-9 sm-width-full">
+      <div class="main-carousel border-radius-2 box-shadow" data-flickity='{ "autoPlay": true, "wrapAround": true, "imagesLoaded": true, "percentPosition": false, "prevNextButtons": false}'>
+          {% for images in page.slide-two %}
+            {% include image-slides.html %}
+          {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-vid">
+  <video class="sqs-html5-video" poster="{{ site.baseurl }}/assets/images/app/Geometry-Club-iOS-App-web-bg.jpg" autoplay loop>
+    <source src="{{ site.baseurl }}/assets/video/Geometry-Club-iOS-App-Loop-720.webm" type="video/webm">->
+    <source src="{{ site.baseurl }}/assets/video/Geometry-Club-iOS-App-Loop-480.mp4" type="video/mp4">->
+    <!--[if lt IE 9]>
+      <img src="{{ site.baseurl }}/assets/images/app/Geometry-Club-iOS-App-web-bg-IE8.jpg" class="ie8-poster">
+    <![endif]-->
+  </video>
+  <div class="app-link-position relative z3 mx-auto">
+    <p class="f4 text-center ls-tight white">Available on the</p>
+    {% include app-store-button.html class="" %}
+  </div>
+</section>
+<section class="container-s mx-auto py-4">
+  <div class="">
+    <p class="text-center"><b>Credits</b><br />
+      Development by <a class="link-border" href="https://www.alexedge.co.uk/">Alexander Edge</a><br />
+      Design by <a class="link-border" href="https://davemullenjnr.co.uk/">Dave Mullen Jnr</a></p>
+  </div>
+</section>
+
+
+<!-- slideshow script -->
+<script src="{{ site.baseurl }}/assets/js/flickity.pkgd.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+      $('.main-carousel').flickity();
+  });
+</script>
