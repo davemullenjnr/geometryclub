@@ -1,3 +1,12 @@
+// Blog Image
+.blog-image {
+  figcaption {
+    font-size: 14px;
+    text-align: right;
+    color: $grey-dark;
+  }
+}
+
 // Button states
 
 .kit-button {
@@ -78,6 +87,7 @@ video, .ie8-poster {
   box-shadow: 0 1px 4px 0 rgba(17,17,17,0.25);
   display: block;
   transition-duration: 0.2s;
+  background-color: $black;
 
   &:hover {
     box-shadow: 0 2px 8px 0 rgba(17,17,17,0.50);
@@ -193,7 +203,7 @@ svg.app-icon {
 
 // text-link
 .text-link {
-  font-weight: bold;
+  font-weight: 600;
   letter-spacing: .1rem;
   font-size: 14px;
   color: $grey-mid;
@@ -291,17 +301,13 @@ svg.app-icon {
 
   p {
     font-size: $body-font-size;
-    margin-bottom: $spacer-2;
+    margin-bottom: $spacer-3;
     width: 100%;
 
     @media (min-width: $breakpoint-md) {
       font-size: ($body-font-size * 1.25);
-      margin-bottom: $spacer-3;
-      width: (9 / 12 * 100%); // matches col-8
     }
-
   }
-
 }
 
 // Link styles
