@@ -31,5 +31,5 @@ images:
 </div>
 
 {% for image in page.images %}
-  {% cloudinary /assets/images/blog/welbeck/{{ image.src }} class="mb-3 blog-image" alt="Welbeck Street cap park photo by {{ image.author }}" caption="Photo by {{ image.author }}" %}
+  {% cloudinary /assets/images/blog/welbeck/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Welbeck Street cap park photo by {{ image.author }}" caption="Photo by {{ image.author }}" %}
 {% endfor %}
