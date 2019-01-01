@@ -1,3 +1,17 @@
+// Cloudinary
+
+.blog-image {
+  img {
+    margin-bottom: $spacer * 2;
+  }
+
+  figcaption {
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
+
 // Blog Image
 .blog-image {
   figcaption {
