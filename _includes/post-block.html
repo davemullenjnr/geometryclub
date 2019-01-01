@@ -1,13 +1,15 @@
-<!-- Renders post date, title, and snippet of text. -->
-<section class="mb-4">
-  <a class="header-background block mb-2 link-image" href="{{ page.url | prepend: site.baseurl }}">
-    {% if page.hero-image-src %}
-      {% cloudinary {{ page.hero-image-src }} alt="{{ page.hero-image-alt }}" %}
+<section class="pb-4 mb-4 border-bottom">
+  <a class="header-background block mb-3 link-image" href="{{ post.url | prepend: site.baseurl }}">
+    {% if post.hero-image-src %}
+      {% cloudinary {{ post.hero-image-src }} alt="{{ post.hero-image-alt }}" %}
     {% endif %}
   </a>
-  <p class="f7 uppercase bold ls-wide right sm-width-full mb-0">{{ page.date | date: "%b %-d, %Y" }}</p>
-  <h2 class="f3 lh-condensed col-9 mt-0">
-    <a class="link" title="{{ post.url | prepend: site.baseurl }}" href="{{ page.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  <p class="f7 uppercase bold ls-wide text-center sm-width-full">{{ post.date | date_to_long_string: "ordinal" }}</p>
+  <h2 class="f3 lh-12 mx-auto text-center mb-2">
+    <a class="link" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </h2>
-  <p class="f6 col-9 sm-width-full">{{ page.content | strip_html | truncatewords:30 }}</p>
+  <p class="f6 col-9 mx-auto text-center md-width-full mb-2">{{ post.content | strip_html | truncatewords:30 }}</p>
+  <div class="flex">
+    <a class="border-radius f6 lh-10 kit-button mx-auto text-center bold" href="{{ post.url | prepend: site.baseurl }}">Continue Reading</a>
+  </div>
 </section>

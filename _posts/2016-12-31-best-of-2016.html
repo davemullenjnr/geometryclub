@@ -1,0 +1,62 @@
+---
+layout: post
+header: true
+title: "Best of 2016"
+date: 2016-12-31 09:00:00 +0000
+permalink: /blog/best-of-2016/
+category: blog
+hero-image-src: /assets/images/blog/best-of-2016/Best-of-2016-Header-Landscape.jpg
+hero-image-alt: Best of Geometry Club 2016
+redirect_from: /best-of-2016/
+
+images:
+  - src: 01-London-England-@craig.d.jpg
+    author: "@craig.d"
+    location: "London, England."
+  - src: 02-Barcelona-Spain-@george__franklin.jpg
+    author: "@george__franklin"
+    location: "Barcelona, Spain."
+  - src: 03-Madrid-Spain-@martanferreira.jpg
+    author: "@martanferreira"
+    location: "Madrid, Spain."
+  - src: 04-Sheffield-England-@davemullenjnr.jpg
+    author: "@davemullenjnr"
+    location: "Sheffield, England."
+  - src: 05-Los-Angeles-USA-@wheeleyum.jpg
+    author: "@wheeleyum"
+    location: "Los Angeles, USA."
+  - src: 06-Rome-Italy-@ilniffo.jpg
+    author: "@ilniffo"
+    location: "Rome, Italy."
+  - src: 07-Sofia-Bulgaria-@r.davidkoff.jpg
+    author: "@r.davidkoff"
+    location: "Sofia, Bulgaria."
+  - src: 08-Ekaterinburg-Russia-@dima_kalmykov.jpg
+    author: "@dima_kalmykov"
+    location: "Ekaterinburg, Russia."
+  - src: 09-Amsterdam-Netherlands-@ferrypasschier.jpg
+    author: "@ferrypasschier"
+    location: "Amsterdam, Netherlands."
+  - src: 10-Hamburg-Germany-@williwilhelmphotography.jpg
+    author: "@williwilhelmphotography"
+    location: "Hamburg, Germany."
+  - src: 11-Puebla-Mexico-@ebrick_benitez.jpg
+    author: "@ebrick_benitez"
+    location: "Puebla, Mexico."
+  - src: 12-Tokyo-Japan-@moonxseed.jpg
+    author: "@moonxseed"
+    location: "Tokyo, Japan."
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>Looking back at Geometry Club this past year has made me immensely proud. Geometry Club has been highlighted by some of my favourite blogs in design/creativity; <a class="link-border" href="http://www.aisleone.net/2016/03/23/geometry-club/">Aisle One</a> and <a class="link-border" href="http://www.swiss-miss.com/2016/03/geometry-club.html">Swiss Miss</a>. <a class="link-border" href="https://www.instagram.com/barbicancentre/">The Barbican Centre</a> got in on the act and did a mini-series of their own ‘Geometry Clubs’. Oh, and <a class="link-border" href="http://www.wearesweet.co/">Sweet</a> did a really cool piece on Snapchat about us which, i later learned, was the reason we got 3 or 4 thousand new followers in one day.</p>
+  <p><b>I’ve got some exciting things in the pipeline for 2017.</b> (Including an iOS app to help you line-up that shot with perfection, but more about that later).</p>
+  <p>Thank you to everyone who’s followed along so far and a <b>high-five</b> to those of you who have contributed to #geometryclub. I literally couldn’t do it with y’all.</p>
+  <p>Here’s my personal favourite twelve shots of 2016. <b>Happy New Year!</b></p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/best-of-2016/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="{{ image.location }} - photo by {{ image.author }} for Geometry Club" caption="{{ image.location }} [by {{ image.author }}]" %}
+  {% endfor %}
+</section>

@@ -1,0 +1,59 @@
+---
+layout: post
+header: true
+title: "Best of 2015"
+date: 2015-12-31 09:00:00 +0000
+permalink: /blog/best-of-2015/
+category: blog
+hero-image-src: /assets/images/blog/best-of-2015/Geometry-Club-best-of-2015-header.jpg
+hero-image-alt: Best of Geometry Club 2015
+redirect_from: /best-of-2015/
+
+images:
+  - src: 01-Geometry-Club-on-instagram-@jagamac266.jpg
+    author: "@jagamac266"
+    location: "North Canal Road, Singapore."
+  - src: 02-Geometry-Club-on-instagram-@ryjohnson1208.jpg
+    author: "@ryjohnson1208"
+    location: "Tenerife, Spain."
+  - src: 03-Geometry-Club-on-instagram-@kevin_town.jpg
+    author: "@kevin_town"
+    location: "Vienna, Austria."
+  - src: 04-Geometry-Club-on-instagram-@nyaorange.jpg
+    author: "@nyaorange"
+    location: "Tokyo, Japan."
+  - src: 05-Geometry-Club-on-instagram-@docomomo_iran.jpg
+    author: "@docomomo_iran"
+    location: "Tehran, Iran."
+  - src: 06-Geometry-Club-on-instagram-@arjunaimel.jpg
+    author: "@arjunaimel"
+    location: "Los Angeles, USA."
+  - src: 07-Geometry-Club-on-instagram-@davidcavill.jpg
+    author: "@davidcavill"
+    location: "Sydney, Australia."
+  - src: 08-Geometry-Club-on-instagram-@audgieboy.jpg
+    author: "@audgieboy"
+    location: "Winnipeg, Canada."
+  - src: 09-Geometry-Club-on-instagram-@berlintensiv.jpg
+    author: "@berlintensiv"
+    location: "Berlin, Germany."
+  - src: 10-Geometry-Club-on-instagram-@davemullenjnr.jpg
+    author: "@davemullenjnr"
+    location: "New York City, USA."
+  - src: 11-Geometry-Club-on-instagram-@juliafbecker.jpg
+    author: "@juliafbecker"
+    location: "New York, USA."
+  - src: 12-Geometry-Club-on-instagram-@fatfreddy78.jpg
+    author: "@fatfreddy78"
+    location: "Berlin, Germany."
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>My favourite 12 Geometry Club submissions of 2015.</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/best-of-2015/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="{{ image.location }} - photo by {{ image.author }} for Geometry Club" caption="{{ image.location }} [by {{ image.author }}]" %}
+  {% endfor %}
+</section>

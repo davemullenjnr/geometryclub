@@ -1,0 +1,64 @@
+---
+layout: post
+header: true
+title: "Best of 2017"
+date: 2017-12-31 09:00:00 +0000
+permalink: /blog/best-of-2017/
+category: blog
+hero-image-src: /assets/images/blog/best-of-2017/Geometry-Club-Best-of-2017-Header.jpg
+hero-image-alt: Best of Geometry Club 2017
+redirect_from: /best-of-2017/
+
+images:
+  - src: 01-Macau-China-@optologic-best-of-Geometry-Club-2017.jpg
+    author: "@optologic"
+    location: Macau, China.
+  - src: 02-Frankfurt-Germany-@marcorama-best-of-Geometry-Club-2017.jpg
+    author: "@marcorama"
+    location: Frankfurt, Germany.
+  - src: 03-Stockholm-Sweden-@viktorlangben-best-of-Geometry-Club-2017.jpg
+    author: "@viktorlangben"
+    location: Stockholm, Sweden.
+  - src: 04-Bochum-Germany-@studio.7even-best-of-Geometry-Club-2017.jpg
+    author: "@studio.7even"
+    location: Bochum, Germany.
+  - src: 05-Manchester-England-@davemullenjnr-best-of-Geometry-Club-2017.jpg
+    author: "@davemullenjnr"
+    location: Manchester, England.
+  - src: 06-New-York-USA-@the.rajiv-best-of-Geometry-Club-2017.jpg
+    author: "@the.rajiv"
+    location: New York, USA.
+  - src: 07-Rome-Italy-@_duartecalf_-best-of-Geometry-Club-2017.jpg
+    author: "@_duartecalf_"
+    location: Rome, Italy.
+  - src: 08-Dublin-Ireland-@dijuano-best-of-Geometry-Club-2017.jpg
+    author: "@dijuano"
+    location: Dublin, Ireland.
+  - src: 09-Granada-Spain-@rubens.photo-best-of-Geometry-Club-2017.jpg
+    author: "@rubens.photo"
+    location: Granada, Spain.
+  - src: 10-Jakarta-Indonesia-@fnangoy-best-of-Geometry-Club-2017.jpg
+    author: "@fnangoy"
+    location: Jakarta, Indonesia.
+  - src: 11-New-Haven-Connecticut-USA-@dqktr-best-of-Geometry-Club-2017.jpg
+    author: "@dqktr"
+    location: New Haven, Connecticut, USA.
+  - src: 12-Aberdeen-Scotland-@thepsychologymum-best-of-Geometry-Club-2017.jpg
+    author: "@thepsychologymum"
+    location: Aberdeen, Scotland.
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p><b>What a year!</b></p>
+  <p><b>Creative Review interviewed me</b> and wrote a wonderful <a class="link-border" href="https://www.creativereview.co.uk/instagram-project-geometry-club-collates-perfectly-aligned-architectural-photos/">piece about the project</a>. The article made it all the way into their February 2017 issue. Other notable (printed) praise came at the kind hands of Surface Magazine, The Observer, and The Guardian.</p>
+  <p><b>I redesigned <em>this</em> website</b>, with an emphasis on simplicity and ease-of-use. Particularly for those accessing it on mobile devices.</p>
+  <p>Finally, to round the year off, (iOS developer) <a class="link-border" href="https://www.alexedge.co.uk/">Alexander Edge</a> and I released the <a class="link-border" href="https://geometryclub.org/app/"><b>Geometry Club iOS app</b></a> — A free iPhone and iPad camera application that helps you to align your architecture photos with precision.</p>
+  <p>As always, thank you for supporting, contributing to, and sharing the project! Please take a look at my personal favourite Geometry Club photos from 2017. (below)</p>
+  <p><b>All the best for the new year!</b></p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/best-of-2017/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="{{ image.location }} - photo by {{ image.author }} for Geometry Club" caption="{{ image.location }} [by {{ image.author }}]" %}
+  {% endfor %}
+</section>

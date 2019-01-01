@@ -1,0 +1,41 @@
+---
+layout: post
+header: true
+title: "Mini Series: The Broad Museum, LA."
+date: 2016-08-23 09:00:00 +0000
+permalink: /blog/the-broad-museum-la/
+category: blog
+hero-image-src: /assets/images/blog/the-broad/The-Broad-Museum-Los-Angeles-Blog-Header.jpg
+hero-image-alt: The Broad Museum Los Angeles
+redirect_from: /mini-series-the-broad-museum-la/
+
+images:
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@chiehsheng0616.jpg
+    author: "@chiehsheng0616"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@gildarake.jpg
+    author: "@gildarake"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@jackshenker.jpg
+    author: "@jackshenker"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@jwquixote.jpg
+    author: "@jwquixote"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@shelley.fu.jpg
+    author: "@shelley.fu"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@uniqlax.jpg
+    author: "@uniqlax"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@wheeleyum.jpg
+    author: "@wheeleyum"
+  - src: The-Broad-Museum-Los-Angeles-Architecture-Photography-@zrfreeman.jpg
+    author: "@zrfreeman"
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>The Broad is a new contemporary art museum founded by philanthropists Eli and Edythe Broad on Grand Avenue in downtown Los Angeles. The museum is designed by <a class="border-link" href="http://www.dsrny.com/">Diller Scofidio + Renfro</a> in collaboration with <a class="link-border" href="http://www.gensler.com/">Gensler</a>.</p>
+  <p>Since it’s opening in September 2015, <a class="link-border" href="http://www.thebroad.org/">The Broad Museum</a> has been the most photographed piece of architecture that i’ve received submissions for on Geometry Club. I can’t feature every submission of The Broad. But, as it’s such a charming building, here’s a little mini series that i’ll keep updating as the submissions roll in.</p>
+  <p>Enjoy!</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/the-broad/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="The Broad Museum photo by {{ image.author }}" caption="Photo by {{ image.author }}" %}
+  {% endfor %}
+</section>

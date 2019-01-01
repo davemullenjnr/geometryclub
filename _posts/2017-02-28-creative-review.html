@@ -1,0 +1,29 @@
+---
+layout: post
+header: true
+title: "Creative Review Article"
+date: 2017-02-28 09:00:00 +0000
+permalink: /blog/creative-review/
+category: blog
+hero-image-src: /assets/images/blog/creative-review/Geometry-Club-Creative-Review-Magazine-Article-Header.jpg
+hero-image-alt: Creative Review Article
+redirect_from: /creative-review/
+
+images:
+  - src: Geometry-Club-Creative-Review-Magazine-CR-Pick.jpg
+  - src: Geometry-Club-Creative-Review-Magazine-Article.jpg
+  - src: Geometry-Club-Creative-Review-Magazine-image-credits.jpg
+  - src: Geometry-Club-Creative-Review-Magazine-Cover-February-2017.jpg
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>I was recently interviewed by <a class="link-border" href="https://www.creativereview.co.uk/">Creative Review</a> about how Geometry Club began and what’s coming up. I’ve bought dozens of issues of CR over the last ten years, so for the project to be celebrated by them is undoubtedly my favourite achievement to date.</p>
+  <p>Thanks to all of you for contributing, supporting, and making it possible.</p>
+  <p>Here’s a link to the <a class="link-border" href="https://www.creativereview.co.uk/instagram-project-geometry-club-collates-perfectly-aligned-architectural-photos/">full article</a> online.</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/creative-review/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Geometry Club article in Creative Review magazine" %}
+  {% endfor %}
+</section>

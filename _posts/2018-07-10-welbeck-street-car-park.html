@@ -24,12 +24,13 @@ images:
     author: "@whatinasees"
 ---
 
-<div class="mb-4">
+<section class="container-s mx-auto mt-4 mb-4">
   <p>Welbeck Street car park is one of London’s most iconic brutalist-era landmarks. The multi-storey building was designed by Michael Blampied & Partners and completed in 1970. With it’s geometric modular facade, made up of 100+ concrete diamond-shaped frames, this building is a must-see when in London. However, time is of the essence as <a class="link-border" href="https://www.dezeen.com/2017/08/10/welbeck-street-car-park-brutalist-era-demolition-eric-parry-architects-news-london-uk/">Westminster Council recently approved the demolition of this architectural classic</a> to make way for a 10-storey hotel.</p>
-
   <p>Thanks to those who has submitted their shots of it so far (below). If you’re lucky enough to stand beneath it before it’s demolished, snap my favourite composition, <a class="link-border" href="/submit">submit</a>, and i’ll add them here, too.</p>
-</div>
+</section>
 
-{% for image in page.images %}
-  {% cloudinary /assets/images/blog/welbeck/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Welbeck Street cap park photo by {{ image.author }}" caption="Photo by {{ image.author }}" %}
-{% endfor %}
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/welbeck/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Welbeck Street car park photo by {{ image.author }}" caption="Photo by {{ image.author }}" %}
+  {% endfor %}
+</section>
