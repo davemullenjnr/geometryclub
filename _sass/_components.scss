@@ -269,6 +269,15 @@ svg.app-icon {
     }
   }
 }
+// Nav
+.nav a {
+  transition: ease-in-out .1s;
+
+  &:hover {
+    color: $grey-mid;
+  }
+}
+
 
 // Footer Navigation
 .footer-nav {
@@ -283,17 +292,12 @@ svg.app-icon {
   a {
     padding-top: $spacer-1;
     padding-bottom: $spacer-1;
-    transition: ease-in-out .1s;
-
-    &:hover {
-      color: $grey-mid;
-    }
+  }
 
     @media (min-width: $breakpoint-md) {
       padding: $spacer-2
     }
   }
-}
 
 // Video
 .video-wrapper {
