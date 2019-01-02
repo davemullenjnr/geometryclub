@@ -11,4 +11,3 @@ Copy newly generate _site folder using Finder.
 Delete contents of gh-pages branch, paste new _site folder contents in it's place. Use GitHub desktop to commit changes then push.
 
 `git checkout master`
-
