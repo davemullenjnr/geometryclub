@@ -1,13 +1,18 @@
-Workaround to deploy site.
+Build _site for production
+`JEKYLL_ENV=production bundle exec jekyll build`
 
-Push any new changes to the master branch.
+Delete remote `gh-pages` branch
+`git push origin --delete gh-pages`
 
-Then, `JEKYLL_ENV=production bundle exec jekyll build`
+Delete local `gh-pages` branch
+`git branch -D gh-pages`
 
-Copy newly generate _site folder using Finder.
+Create orphaned `gh-pages` branch
+`git checkout --orphan gh-pages`
 
-`git checkout gh-pages`
+Stage the _site folder and commit
+`git add _site/ && git commit -m "Initial _site subtree commit`
 
-Delete contents of gh-pages branch, paste new _site folder contents in it's place. Use GitHub desktop to commit changes then push.
+Push changes to `gh-pages`
+`git subtree push --prefix _site origin gh-pages`
 
-`git checkout master`
