@@ -11,7 +11,7 @@ Create orphaned `gh-pages` branch
 `git checkout --orphan gh-pages`
 
 Stage the _site folder and commit
-`git add _site/ && git commit -m "Initial _site subtree commit`
+`git add _site/ && git commit -m "Initial _site subtree commit"`
 
 Push changes to `gh-pages`
 `git subtree push --prefix _site origin gh-pages`
