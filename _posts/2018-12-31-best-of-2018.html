@@ -1,0 +1,59 @@
+---
+layout: post
+header: true
+title: "Best of 2018"
+date: 2018-12-31 09:00:00 +0000
+permalink: /blog/best-of-2018/
+category: blog
+hero-image-src: /assets/images/blog/best-of-2018/Geometry-Club-Best-of-2018-Header.jpg
+hero-image-alt: Best of Geometry Club 2018
+redirect_from: /best-of-2018/
+
+images:
+  - src: 01-Essen-Germany-@studio.7even-best-of-Geometry-Club-2018.jpg
+    author: "@studio.7even"
+    location: Essen, Germany.
+  - src: 02-Clayton-Missouri-USA-@relevantlens-best-of-Geometry-Club-2018.jpg
+    author: "@relevantlens"
+    location: Clayton, Missouri, USA.
+  - src: 03-Rennes-France-@ftne_prod-best-of-Geometry-Club-2018.jpg
+    author: "@ftne_prod"
+    location: Rennes, France.
+  - src: 04-Düsseldorf-Germany-@mark.schwindt-best-of-Geometry-Club-2018.jpg
+    author: "@mark.schwindt"
+    location: Düsseldorf, Germany.
+  - src: 05-London-England-@urban.kunst-best-of-Geometry-Club-2018.jpg
+    author: "@urban.kunst"
+    location: London, England.
+  - src: 06-Manchester-England-@uniqlax-best-of-Geometry-Club-2018.jpg
+    author: "@uniqlax"
+    location: Manchester, England.
+  - src: 07-Turin-Italy-@ngtv.space-best-of-Geometry-Club-2018.jpg
+    author: "@ngtv.space"
+    location: Turin, Italy.
+  - src: 08-Minden-Germany-@uniqlax-best-of-Geometry-Club-2018.jpg
+    author: "@uniqlax"
+    location: Minden, Germany.
+  - src: 09-Strasbourg-France-@marcorama-best-of-Geometry-Club-2018.jpg
+    author: "@marcorama"
+    location: Strasbourg, France.
+  - src: 10-Copenhagen-Denmark-@adribian-best-of-Geometry-Club-2018.jpg
+    author: "@adribian"
+    location: Copenhagen, Denmark.
+  - src: 11-New-York-City-USA-@lee_iley-best-of-Geometry-Club-2018.jpg
+    author: "@lee_iley"
+    location: New York City, USA.
+  - src: 12-Castellón-Spain-@doruben-best-of-Geometry-Club-2018.jpg
+    author: "@doruben"
+    location: Castellón, Spain.
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>A round-up of my personal favourite Geometry Club submissions from 2018. A huge thanks to everyone who contributed this year!</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/best-of-2018/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="{{ image.location }} - photo by {{ image.author }} for Geometry Club" caption="{{ image.location }} [by {{ image.author }}]" %}
+  {% endfor %}
+</section>
