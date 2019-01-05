@@ -8,8 +8,8 @@
   <h2 class="f3 lh-12 mx-auto text-center mb-2">
     <a class="link" title="{{ post.url | prepend: site.baseurl }}" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
   </h2>
-  <p class="f6 col-9 mx-auto text-center md-width-full mb-2">{{ post.content | strip_html | truncatewords:30 }}</p>
+   <p class="f6 col-9 mx-auto text-center md-width-full mb-2">{% if post.caption %}{{ post.caption }}{% else %}{{ post.content | strip_html | truncatewords:24 }}{% endif %}</p>
   <div class="flex">
-    <a class="border-radius f6 lh-10 kit-button mx-auto text-center bold" href="{{ post.url | prepend: site.baseurl }}">Continue Reading</a>
+    <a class="border-radius f6 lh-10 standard-button mw-8 mx-auto text-center bold" href="{{ post.url | prepend: site.baseurl }}">View post</a>
   </div>
 </section>

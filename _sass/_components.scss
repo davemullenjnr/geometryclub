@@ -24,10 +24,9 @@
 
 // Button states
 
-.kit-button {
+.standard-button {
   padding: $spacer * 2;
   border: 1px solid $black;
-  min-width: 12rem;
   text-align: center;
   transition: .1s ease-in-out;
 
@@ -37,11 +36,11 @@
   }
 }
 
-.kit-button-outline {
+.standard-button-outline {
   background: transparent;
 }
 
-.kit-button-solid {
+.standard-button-solid {
   background: $black;
   color: $white;
 }

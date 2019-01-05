@@ -5,7 +5,6 @@
 
 .wufoo label.desc {
   margin: 0px;
-  font-weight: 400;
   font-size: 1.8rem;
   font-size: 18px;
 }
@@ -16,7 +15,7 @@
 }
 
 .wufoo input.text {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   padding: 12px;
   border-radius: 4px;
   font-size: 1.4em;
@@ -28,14 +27,19 @@
   padding: 12px;
 }
 
+.wufoo .instruct {
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
 .wufoo li {
   width: 99%;
   max-width: 99%;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 form ul {
-  width: 90%;
+  max-width: 100%;
 }
 
 form li {
@@ -59,9 +63,10 @@ form li.buttons input {
 
 .wufoo input.btTxt {
   -webkit-appearance: none;
+  cursor: pointer;
   font-size: 18px;
   font-weight: 700;
-  padding: 16px 32px;
+  padding: 4px 24px;
   background-color: #ffffff;
   color: #333;
   border: 1px solid #ccc;

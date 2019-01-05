@@ -170,6 +170,12 @@
 
 .align-middle { vertical-align: middle; }
 
+/* Minimum Widths */
+.mw-8 { min-width: 8rem; }
+.mw-10 { min-width: 10rem; }
+.mw-12 { min-width: 12rem; }
+
+
 /* Padding */
 .px-0 { padding-left: 0; padding-right:  0 }
 .py-0 { padding-top: 0;  padding-bottom: 0 }
@@ -355,7 +361,10 @@
 
 // Viewport Height
 .vh-100 {height: 100vh;}
+
+// Minimum Viewport Height
 .mvh-100 {min-height: 100vh}
+.mvh-75 {min-height: 75vh}
 
 //Positioning
 .fixed {position: fixed;}
