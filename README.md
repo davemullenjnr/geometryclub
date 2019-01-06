@@ -4,4 +4,4 @@ Celebrating the beauty of architecture with precisely aligned photographs from a
 
 [geometryclub.org](https://geometryclub.org/)
 
-[instagram](https://instagram.com/geometryclub)
+[@geometryclub](https://instagram.com/geometryclub) on Instagram
