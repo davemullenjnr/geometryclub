@@ -1,5 +1,5 @@
 ---
 layout: support
 header: true
-permalink: support
+permalink: /support/
 ---

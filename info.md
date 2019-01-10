@@ -1,7 +1,7 @@
 ---
 layout: info
 header: true
-permalink: info
+permalink: /info/
 article:
   - author: Creative Review
     url: https://www.creativereview.co.uk/instagram-project-geometry-club-collates-perfectly-aligned-architectural-photos

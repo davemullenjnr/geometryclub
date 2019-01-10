@@ -1,7 +1,7 @@
 ---
 layout: app
 header: true
-permalink: app
+permalink: /app/
 
 slide-one:
   - src: /assets/images/app/Geometry-Club-iOS-App-web-1.jpg

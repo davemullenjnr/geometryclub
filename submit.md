@@ -1,5 +1,5 @@
 ---
 layout: submit
 header: true
-permalink: submit
+permalink: /submit/
 ---

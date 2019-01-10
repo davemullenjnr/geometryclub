@@ -1,7 +1,7 @@
 ---
 layout: press-kit
 header: true
-permalink: press-kit
+permalink: /press-kit/
 
 images:
   - image_path: guidelines.gif
