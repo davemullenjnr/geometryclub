@@ -3,6 +3,10 @@
   font-family: 'Graphik', sans-serif;
 }
 
+.embed #container {
+  overflow: auto;
+}
+
 .wufoo label.desc {
   margin: 0px;
   font-size: 1.8rem;
@@ -38,7 +42,7 @@
 }
 
 form ul {
-  max-width: 75vw;
+  max-width: 100vw;
 }
 
 form li {
