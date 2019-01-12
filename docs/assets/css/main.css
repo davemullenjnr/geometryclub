@@ -1644,22 +1644,22 @@ svg.app-icon {
 
 .wufoo input.text {
   margin-bottom: 12px;
-  padding: 12px;
+  padding: 8px;
   border-radius: 4px;
   font-size: 1.4em; }
 
 .wufoo textarea.textarea {
   border-radius: 4px;
   font-size: 1.4em;
-  padding: 12px; }
+  padding: 8px; }
 
 .wufoo .instruct {
   line-height: 1.2;
   margin-bottom: 12px; }
 
 .wufoo li {
-  width: 99%;
-  max-width: 99%;
+  width: 64%;
+  max-width: 64%;
   margin-bottom: 0.5rem; }
 
 form ul {
