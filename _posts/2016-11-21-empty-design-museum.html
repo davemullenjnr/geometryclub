@@ -1,0 +1,44 @@
+---
+layout: post
+header: true
+title: "Empty Design Museum"
+date: 2016-11-21 09:00:00 +0000
+permalink: /blog/empty-design-museum/
+category: blog
+hero-image-src: /assets/images/blog/empty-design-museum/blog-empty-design-museum.jpg
+hero-image-alt: Empty Design Museum
+
+images:
+  - src: 01-The-Design-Museum-London-0716.jpg
+  - src: 02-The-Design-Museum-London-0926.jpg
+  - src: 03-The-Design-Museum-London-0758.jpg
+  - src: 04-The-Design-Museum-London-0745.jpg
+  - src: 05-The-Design-Museum-London-0858.jpg
+  - src: 06-The-Design-Museum-London-0776.jpg
+  - src: 07-The-Design-Museum-London-0775.jpg
+  - src: 08-The-Design-Museum-London-0942.jpg
+  - src: 09-The-Design-Museum-London-0916.jpg
+  - src: 10-The-Design-Museum-London-0790.jpg
+  - src: 11-The-Design-Museum-London-0735.jpg
+  - src: 12-The-Design-Museum-London-0780.jpg
+  - src: 13-The-Design-Museum-London-0805.jpg
+  - src: 14-The-Design-Museum-London-0760.jpg
+  - src: 15-The-Design-Museum-London-0887.jpg
+  - src: 16-The-Design-Museum-London-0813.jpg
+  - src: 17-The-Design-Museum-London-0766.jpg
+  - src: 18-The-Design-Museum-London-0956.jpg
+  - src: 19-The-Design-Museum-London-0936.jpg
+  - src: 20-The-Design-Museum-London-0714.jpg
+
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p><a class="link-border" href="https://designmuseum.org/">The Design Museum</a> invited Geometry Club to explore and photograph their new space before it opens to the public on 24th Nov 2016.</p>
+  <p>The highlight was the enormity of the hyperbolic paraboloid roof. It has been beautifully exposed so that it could enjoyed from the inside. Here’s a selection of my photographs from the #emptydesignmuseum event.</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/empty-design-museum/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Empty Design Museum photo by Dave Mullen Jnr for Geometry Club" %}
+  {% endfor %}
+</section>
