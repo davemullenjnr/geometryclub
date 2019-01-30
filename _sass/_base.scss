@@ -1,10 +1,17 @@
 /**
   * Reset some basic elements
 */
-
 * {
  box-sizing: border-box !important;
  margin: 0; }
+
+html {
+  font-size: $body-font-size;
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: $prose-font-size
+  }
+}
 
 input,
 select,
@@ -37,6 +44,10 @@ body {
     background-color: $white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    @media (min-width: $breakpoint-xl) {
+      font-size: $prose-font-size
+    }
 }
 
 p {

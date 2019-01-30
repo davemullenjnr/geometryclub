@@ -198,7 +198,7 @@ video, .ie8-poster {
 // app icon
 .app-icon-box {
   background-color: $black;
-  border-radius: 1.25rem;
+  border-radius: 20px;
   width: 80px;
   height: 80px;
 }
@@ -230,6 +230,10 @@ svg.app-icon {
     color: $grey-dark;
     border-bottom-color: $grey-dark;
   }
+
+  @media (min-width: $breakpoint-xl) {
+    font-size: 18px;
+  }
 }
 
 // Hero 
@@ -237,16 +241,25 @@ svg.app-icon {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 52em;
+  max-width: 52rem;
 
   @media (min-width: $breakpoint-lg) {
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
+  }
+
+  @media (min-width: $breakpoint-xl) {
+    max-width: 64rem;
   }
 
   .visual {
     max-width: 240px;
+
+    @media (min-width: $breakpoint-xl) {
+      max-width: 30%;
+    }
   }
+
   .title {
     max-width: 520px;
     align-items: center;
@@ -266,8 +279,18 @@ svg.app-icon {
         text-align: left;
       }
     }
+
+    @media (min-width: $breakpoint-xl) {
+      max-width: 60%;
+
+      img {
+        max-width: 28rem;
+      }
+    }
   }
 }
+
+
 // Nav
 .nav a {
   transition: ease-in-out .1s;

@@ -62,6 +62,9 @@ $breakpoint-md: 35em;
 // Large breakpoint (52em @ 16px is 832px)
 $breakpoint-lg: 52em;
 
+// XL breakpoint (96em @ 16px is 1536px)
+$breakpoint-xl: 96em;
+
 
 // Container width (48em @ 16px is 768px)
 $container-width-s: 40em;
@@ -76,7 +79,7 @@ $container-width-l: 64em;
 $container-width-xl: 72em;
 
 // Spacing unit
-$spacer: 8px !default;
+$spacer: 0.5rem !default;
 
 // Spacing scale
 $spacer-1: $spacer !default; // 8px
