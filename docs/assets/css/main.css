@@ -316,7 +316,7 @@ svg.app-icon {
           justify-content: space-around; } }
   @media (min-width: 96em) {
     .hero-container {
-      max-width: 64rem; } }
+      max-width: 60rem; } }
   .hero-container .visual {
     max-width: 240px; }
     @media (min-width: 96em) {
@@ -344,7 +344,9 @@ svg.app-icon {
       .hero-container .title {
         max-width: 60%; }
         .hero-container .title img {
-          max-width: 28rem; } }
+          max-width: 28rem; }
+        .hero-container .title p {
+          font-size: 1.25rem; } }
 
 .nav a {
   -webkit-transition: ease-in-out .1s;
