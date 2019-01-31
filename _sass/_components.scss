@@ -249,7 +249,7 @@ svg.app-icon {
   }
 
   @media (min-width: $breakpoint-xl) {
-    max-width: 64rem;
+    max-width: 60rem;
   }
 
   .visual {
@@ -285,6 +285,10 @@ svg.app-icon {
 
       img {
         max-width: 28rem;
+      }
+
+      p {
+        font-size: 1.25rem;
       }
     }
   }
