@@ -22,5 +22,5 @@ article:
   - author: TenMag
     url: http://www.tendenciasfashionmag.com/geometry-club-tenmag/
   - author: Sheffielders
-    url: https://sheffielders.org/collective/geometryclub
+    url: https://sheffielders.org/collective/geometry-club
 ---
