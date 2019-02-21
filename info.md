@@ -21,4 +21,6 @@ article:
     url: https://www.theguardian.com/artanddesign/gallery/2017/jan/28/architecture-photography-corner-in-pictures
   - author: TenMag
     url: http://www.tendenciasfashionmag.com/geometry-club-tenmag/
+  - author: Sheffielders
+    url: https://sheffielders.org/collective/geometryclub
 ---
