@@ -1,4 +1,6 @@
 ---
+title: iOS Camera App
+excerpt: A purpose-built camera app for your iPhone that helps to line up your Geometry Club architecture photos, in real time.
 layout: app
 header: true
 permalink: /app/

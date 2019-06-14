@@ -1,4 +1,6 @@
 ---
+title: Info
+excerpt: Geometry Club is a series of architecture photographs that are identical in composition, giving us a unique perspective to contrast and compare the differences in form, design, and construction of each facade.
 layout: info
 header: true
 permalink: /info/
