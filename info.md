@@ -25,4 +25,6 @@ article:
     url: http://www.tendenciasfashionmag.com/geometry-club-tenmag/
   - author: Sheffielders
     url: https://sheffielders.org/collective/geometry-club
+  - author: Fstoppers
+    url: https://fstoppers.com/architecture/if-precise-lines-and-architecture-your-passion-check-out-instagram-project-385756
 ---
