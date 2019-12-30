@@ -1,0 +1,60 @@
+---
+layout: post
+header: true
+title: "Best of 2019"
+date: 2019-12-30 09:00:00 +0000
+caption: "A round-up of my personal favourite Geometry Club submissions from 2019."
+permalink: /blog/best-of-2019/
+category: blog
+hero-image-src: /assets/images/blog/best-of-2019/Geometry-Club-Best-of-2019.jpg
+hero-image-alt: Best of Geometry Club 2019
+redirect_from: /best-of-2019/
+
+images:
+  - src: 01-Copenhagen-Denmark-@jekashohirev-best-of-Geometry-Club-2019.jpg
+    author: "@jekashohirev"
+    location: Copenhagen, Denmark.
+  - src: 02-Cambridge-MA-USA-@benreynoldsphoto-best-of-Geometry-Club-2019.jpg
+    author: "@benreynoldsphoto"
+    location: Cambridge, MA, USA.
+  - src: 03-Buenos-Aires-Argentina-@andypillows-best-of-Geometry-Club-2019.jpg
+    author: "@andypillows"
+    location: Buenos Aires, Argentina.
+  - src: 04-Berlin-Germany-@jekashohirev-best-of-Geometry-Club-2019.jpg
+    author: "@jekashohirev"
+    location: Berlin, Germany.
+  - src: 05-New-York-NY-USA-@dsottavio-best-of-Geometry-Club-2019.jpg
+    author: "@dsottavio"
+    location: New York, USA.
+  - src: 06-Sheffield-England-@davemullenjnr-best-of-Geometry-Club-2019.jpg
+    author: "@davemullenjnr"
+    location: Sheffield, England.
+  - src: 07-Rome-Italy-@bbergem-best-of-Geometry-Club-2019.jpg
+    author: "@bbergem"
+    location: Rome, Italy.
+  - src: 08-Dundee-Scotland-@xb_-best-of-Geometry-Club-2019.jpg
+    author: "@xb_"
+    location: Dundee, Scotland.
+  - src: 09-Atlanta-GA-USA-@choijiho_-best-of-Geometry-Club-2019.jpg
+    author: "@choijiho_"
+    location: Atlanta, GA, USA.
+  - src: 10-Milan-Italy-@nicola.brembilla-best-of-Geometry-Club-2019.jpg
+    author: "@nicola.brembilla"
+    location: Milan, Italy.
+  - src: 11-Hamburg-Germany-@lee_iley-best-of-Geometry-Club-2019.jpg
+    author: "@lee_iley"
+    location: Hamburg, Germany.
+  - src: 12-Toronto-Ontario-Canada-@uniqlax-best-of-Geometry-Club-2019.jpg
+    author: "@uniqlax"
+    location: Toronto, Ontario, Canada.
+---
+
+<section class="container-s mx-auto mt-4 mb-4">
+  <p>A selection of my favourite Geometry Club submissions from 2019. Incase you missed it, I also launched a series called <a class="link-border" href="https://geometryclub.org/blog/outliers/">Outliers</a> which is for the great submissions that are too unconventional for the main feed. Thanks to everyone who contributed this year!</p>
+</section>
+
+<section class="container-s mx-auto">
+  {% for image in page.images %}
+    {% cloudinary /assets/images/blog/best-of-2019/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="{{ image.location }} - photo by {{ image.author }} for Geometry Club" caption="{{ image.location }} [by {{ image.author }}]" %}
+  {% endfor %}
+</section>
