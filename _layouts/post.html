@@ -12,8 +12,16 @@ layout: default
     {% if page.hero-image-src %}
       {% cloudinary {{ page.hero-image-src }} alt="{{ page.hero-image-alt }}" %}
     {% endif %}
-    {% if page.hero-image-credit %}
-      <p class="right mt-1 f7 grey-dark">Image credit: <a href="{{ page.hero-image-credit-link }}" class="link-border">{{ page.hero-image-credit }}</a></p>
+    {% if page.credits %}
+      <p class="right mt-1 f7 grey-dark">Image credit(s): 
+        {% for credit in page.credits %}
+          {% if forloop.last == true %}
+            <a href="{{ credit.link }}" class="link-border">{{ credit.anchor }}</a>
+          {% else %}
+            <a href="{{ credit.link }}" class="link-border">{{ credit.anchor }}</a> / 
+          {% endif %}
+        {% endfor %}
+      </p>
     {% endif %}
   </div>
 
