@@ -26,6 +26,11 @@ cloudinary:
       steps: 3
       sizes: "(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px"
 
+# Override the 'has been blocked by CORS policy' error for fonts in development
+webrick:
+  headers:
+    Access-Control-Allow-Origin: "*"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
