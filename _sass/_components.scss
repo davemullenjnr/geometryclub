@@ -435,3 +435,119 @@ svg.app-icon {
   background-color: $black;
   color: $white;
 }
+
+//Print Page Styles
+.prints-page-styles {
+  h1, h2, h3 {
+    font-family: $body-font-family;
+  }
+
+  > div {
+    margin-bottom: 4rem;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  p {
+    color: #dddddd;
+    line-height: 1.5;
+  }
+
+  .note {
+    margin-top: 0.5rem;
+    color: #666666;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  @media (hover: hover) {
+    a:hover {
+      color: #999999;
+    }
+  }
+}
+
+.details-box {
+  position: relative;
+  border: 2px solid #333333;
+  padding: 1rem;
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.66rem;
+    color: #666666;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 0.80rem;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  p.thanks {
+    margin-bottom: 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.print-price {
+  background-color: #222222;
+  border: none;
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.75);
+
+  p {
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+    @media (min-width: $breakpoint-md) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.first-edition {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  background-color: #111111;
+  border: 2px solid #333333;
+  position: absolute;
+  top: -2.5rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+
+  :hover {
+    transform: rotate(360deg);
+    transition: 1s ease-in-out;
+
+  }
+
+  img {
+    width: 3.5rem;
+    height: 3.5rem;
+    flex-grow: 1;
+
+    :hover {
+      transform: rotate(45deg);
+    }
+  }
+}

@@ -113,6 +113,10 @@
   list-style: none;
   text-align: center;
   line-height: 1;
+
+}
+.print-carousel .flickity-page-dots {
+  text-align: right;
 }
 
 .flickity-rtl .flickity-page-dots {
@@ -128,6 +132,15 @@
   border-radius: 4px;
   opacity: 0.25;
   cursor: pointer;
+}
+
+.print-carousel .dot {
+  background: #ddd;
+
+  @media (min-width: $breakpoint-md) {
+    width: 48px;
+    height: 6px;
+  }
 }
 
 .flickity-page-dots .dot.is-selected {
