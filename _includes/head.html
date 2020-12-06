@@ -12,7 +12,7 @@
   <meta property="og:site_name"       content="Geometry Club" />
   <meta property="og:description"     content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <meta property="og:title"           content="{% if page.title %}{{ site.title | escape }} — {{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}" />
-  <meta property="og:image"           content="{% if page.image %}{{ page.image }}{% else %} https://geometryclub.org/ {% endif %}">
+  <meta property="og:image"           content="{% if page.image %}{{ page.image }}{% else %} https://geometryclub.org/assets/logo/Geometry-Club-Icon.jpg {% endif %}">
   <meta property="og:locale"          content="en_GB" />
   <meta property="og:url"             content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
   <meta property="og:type"            content="website">
