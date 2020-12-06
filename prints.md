@@ -1,6 +1,7 @@
 ---
 title: Prints
 excerpt: Geometry Club Prints
+image: https://geometryclub.org/assets/images/prints/geometry-club-sheffield-print-thumbnail-wide.jpg
 layout: prints
 header: true
 permalink: /prints/

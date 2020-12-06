@@ -2,6 +2,7 @@
 title: Sheffield Print
 excerpt: 70cm x 50cm print of architecture in sheffield
 image: https://geometryclub.org/assets/images/prints/geometry-club-sheffield-print-thumbnail-wide.jpg
+large-card: true
 layout: sheffield-print
 header: true
 permalink: /prints/sheffield/
