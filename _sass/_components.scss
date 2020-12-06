@@ -306,6 +306,10 @@ svg.app-icon {
 
 
 // Footer Navigation
+.footer {
+  border-top: 1px solid #444;
+}
+
 .footer-nav {
   display: flex;
   flex-direction: column;
