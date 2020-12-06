@@ -136,6 +136,7 @@
 
 .print-carousel .dot {
   background: #ddd;
+  height: 6px;
 
   @media (min-width: $breakpoint-md) {
     width: 48px;
