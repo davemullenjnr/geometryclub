@@ -18,4 +18,6 @@ slide-one:
     alt: Product photo of the Sheffield print packaging with Geometry Club branding
   - src: /assets/images/prints/geometry-club-sheffield-print-close-up-detail.jpg
     alt: Close-up photo of the Sheffield print from the side showing the paper curl up
+  - src: /assets/images/prints/geometry-club-sheffield-print-framed-held-up.jpg
+    alt: Woman holding a framed print of Sheffield's architecture photographed in the Geometry Club style
 ---
