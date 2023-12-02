@@ -2,27 +2,38 @@
 layout: post
 header: true
 title: "Chess Prints"
-date: 2021-12-01 09:00:00 +0000
+date: 2023-12-01 09:00:00 +0000
 permalink: /blog/chess-prints/
 category: blog
 hero-image-src: /assets/images/blog/chess-prints/ruy-lopez-chess-opening-poster-print.jpg
-hero-image-alt: A framed chess print of the popular opening, Ruy Lopez.
+hero-image-alt: Ruy Lopez chess opening art print in a black frame on a white background
 
 images:
-  - src: queens-gambit-chess-opening-poster-print.jpg
-  - src: sicilian-defense-chess-opening-print.jpg
-  - src: london-system-chess-opening-poster-print.jpg
-  - src: caro-kann-defense-chess-opening-poster-print.jpg
-  - src: chess-print-fine-art-paper.jpg
+  - src: 12-popular-chess-openings-print.jpg
+    alt: 12 popular chess openings print design in a black frame
+    title: 12 chess openings art print
+    url: https://www.etsy.com/listing/1140696364/12-chess-openings-print-chess-poster
+  - src: garry-kasparov's-immortal-game-chess-poster.jpg
+    alt: The Immortal Game, Garry Kasparov's famous game as a beautiful art print in a black frame. The chess board position, and chess game notation is included.
+    title: The Immortal Game – Garry Kasparov's famous chess game art print
+    url: https://www.etsy.com/listing/1610009774/the-immortal-game-1851-famous-chess-game
+  - src: 30-chess-openings-poster-design.jpg
+    alt: 30 chess opening moves arranged on one poster, in a black frame on a living room wall
+    title: 30 popular chess openings poster
+    url: https://www.etsy.com/listing/1609467332/famous-chess-game-art-prints-chess
+  - src: scandinavian-defense-chess-openings-poster-black.jpg
+    alt: scandinavian defense chess opening illustrated as an informative art print. black background, white text.
+    title: Scandinavian Defense chess opening poster design
+    url: https://www.etsy.com/listing/1249149264/scandinavian-defense-chess-opening
 ---
 
 <section class="container-s mx-auto mt-4 mb-4">
   <p>I absolutely love chess but the <i>'traditional'</i> aesthetic has never been quite to my taste. I’ve been looking for an excuse to make something that’s a bit more elegant and minimal. So, I’ve started making this series of chess prints based on popular openings.</p>
-  <p>Here’s a link to my <a class="link-border" href="https://www.etsy.com/shop/DaveMullenJnr">Etsy shop</a> where i've started to list them for sale.</p>
+  <p>Here’s a link to my <a class="link-border" href="https://davemullenjnr.etsy.com">Etsy shop</a> where i've started to list them for sale.</p>
 </section>
 
 <section class="container-s mx-auto">
   {% for image in page.images %}
-    {% cloudinary /assets/images/blog/chess-prints/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt="Chess prints of popular openings. Perfect chess gift idea as a poster" %}
+    <a href={{image.url}}> {% cloudinary /assets/images/blog/chess-prints/{{ image.src }} class="mb-3 mb-md-4 blog-image" alt={{ image.alt }} title={{ image.title }} %}</a>
   {% endfor %}
 </section>
