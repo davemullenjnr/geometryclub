@@ -1,3 +1,6 @@
+# optional local Jekyll reference (not tracked; was a broken submodule without .gitmodules)
+/jekyll-geometryclub/
+
 # dependencies
 /node_modules
 /.pnp
