@@ -79,11 +79,13 @@ function PhotoCell({
   alt,
   reduceMotion,
   sizes,
+  priority,
 }: {
   src: string;
   alt: string;
   reduceMotion: boolean;
   sizes: string;
+  priority: boolean;
 }) {
   const lastCommitted = useRef(src);
   const [base, setBase] = useState(src);
@@ -128,6 +130,7 @@ function PhotoCell({
           alt={alt}
           fill
           sizes={sizes}
+          priority={priority}
           className={styles.cover}
         />
       </div>
@@ -142,6 +145,7 @@ function PhotoCell({
             alt={alt}
             fill
             sizes={sizes}
+            priority={priority}
             className={styles.cover}
           />
         </div>
@@ -202,6 +206,7 @@ export default function HomePhotoGrid({ images, initialVisible }: Props) {
           alt=""
           reduceMotion={reduceMotion}
           sizes={sizes}
+          priority={i < 3}
         />
       ))}
     </div>
