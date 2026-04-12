@@ -1,6 +1,121 @@
 [build]
   command = "npm run build"
-  publish = ".netlify/next"
+  publish = "out"
 
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# Static HTML export (`output: "export"`): next.config `redirects()` are not applied to `out/`.
+# These mirror next.config.ts so production matches `next dev`.
+
+[[redirects]]
+  from = "/best-of-2019"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2019/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2018"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2018/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mini-series-welbeck-street-car-park-london"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mini-series-welbeck-street-car-park-london/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2017"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2017/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/creative-review"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/creative-review/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2016"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2016/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mini-series-the-broad-museum-la"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/mini-series-the-broad-museum-la/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2015"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/best-of-2015/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/support"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/support/"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/press-kit"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/press-kit/"
+  to = "/"
+  status = 301
