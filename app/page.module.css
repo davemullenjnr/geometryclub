@@ -42,7 +42,7 @@
 }
 
 .heroTagline {
-  font-size: clamp(0.7rem, 0.7rem + 0.3vw, 1.25rem);
+  font-size: clamp(0.6rem, 0.62rem + 0.47vw, 1.25rem);
   line-height: 1.75;
   color: var(--color-grey-mid);
   margin: 0;
