@@ -6,8 +6,8 @@ import {
   useEffect,
   useRef,
   useState,
+  type AnimationEvent,
   type MutableRefObject,
-  type TransitionEvent,
 } from "react";
 import styles from "./HomePhotoGrid.module.css";
 
@@ -90,7 +90,6 @@ function PhotoCell({
   const lastCommitted = useRef(src);
   const [base, setBase] = useState(src);
   const [incoming, setIncoming] = useState<string | null>(null);
-  const [incomingVisible, setIncomingVisible] = useState(false);
 
   useEffect(() => {
     if (src === lastCommitted.current) return;
@@ -99,25 +98,18 @@ function PhotoCell({
       lastCommitted.current = src;
       setBase(src);
       setIncoming(null);
-      setIncomingVisible(false);
       return;
     }
 
     setIncoming(src);
-    setIncomingVisible(false);
-    const id = requestAnimationFrame(() => {
-      setIncomingVisible(true);
-    });
-    return () => cancelAnimationFrame(id);
   }, [src, reduceMotion]);
 
-  const onIncomingTransitionEnd = useCallback(
-    (e: TransitionEvent<HTMLDivElement>) => {
-      if (e.propertyName !== "opacity" || !incoming) return;
+  const onIncomingAnimationEnd = useCallback(
+    (e: AnimationEvent<HTMLDivElement>) => {
+      if (e.target !== e.currentTarget || !incoming) return;
       lastCommitted.current = incoming;
       setBase(incoming);
       setIncoming(null);
-      setIncomingVisible(false);
     },
     [incoming],
   );
@@ -136,8 +128,9 @@ function PhotoCell({
       </div>
       {incoming !== null && (
         <div
-          className={`${styles.cellLayer} ${styles.cellLayerFade} ${incomingVisible ? styles.cellLayerFadeVisible : ""}`}
-          onTransitionEnd={onIncomingTransitionEnd}
+          key={incoming}
+          className={`${styles.cellLayer} ${styles.cellLayerFade}`}
+          onAnimationEnd={onIncomingAnimationEnd}
           aria-hidden={alt === ""}
         >
           <Image

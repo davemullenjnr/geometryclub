@@ -27,11 +27,19 @@
   object-fit: cover;
 }
 
+/* Keyframe fade (not transition + class): Safari often skips opacity transitions
+   when toggling visible one frame after mount. */
 .cellLayerFade {
   opacity: 0;
-  transition: opacity 0.45s ease;
+  animation: home-photo-cell-fade-in 1s ease forwards;
 }
 
-.cellLayerFadeVisible {
-  opacity: 1;
+@keyframes home-photo-cell-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
