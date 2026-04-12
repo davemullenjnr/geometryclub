@@ -38,7 +38,7 @@ export default function HomePage() {
         description={DEFAULT_DESCRIPTION}
       />
       <div className={styles.home}>
-        {HOME_GRID_IMAGE_PATHS.map((href) => (
+        {initialVisible.map((href) => (
           <link key={href} rel="preload" as="image" href={href} />
         ))}
         <section className={styles.hero}>
