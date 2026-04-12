@@ -15,6 +15,9 @@ const nextConfig: NextConfig = {
   // Static deploy to Netlify (`publish = "out"`). Production redirects are duplicated in
   // netlify.toml because export builds do not apply these. Kept here for `next dev`.
   output: "export",
+  images: {
+    unoptimized: true,
+  },
   async redirects() {
     const toHome: { source: string; destination: string; permanent: boolean }[] =
       [];
