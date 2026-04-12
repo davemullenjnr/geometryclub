@@ -1,0 +1,65 @@
+.darkMode {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding-top: var(--spacer-4);
+  padding-bottom: var(--spacer-5);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 52em; /* matches Jekyll $container-width-m */
+  padding-left: var(--spacer-3);
+  padding-right: var(--spacer-3);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacer-2);
+  line-height: 1.2;
+}
+
+@media (min-width: 35em) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+.cardList {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardLink {
+  display: block;
+}
+
+.cardImage {
+  border-radius: 4px;
+  margin-bottom: var(--spacer-2);
+  transition: opacity 0.2s ease;
+}
+
+.cardLink:hover .cardImage {
+  opacity: 0.8;
+}
+
+.cardHeading {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cardSubtitle {
+  color: var(--color-grey-dark);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  margin: 0;
+
+  @media (min-width: 35em) {
+    font-size: 1.25rem;
+  }
+}

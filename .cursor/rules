@@ -1,0 +1,16 @@
+# Migration rules
+
+This repo contains:
+
+- /jekyll-geometryclub = read-only reference material from the existing Jekyll site
+- the rest of the repo = the new Next.js implementation
+
+Rules:
+
+- Never modify files inside /jekyll-geometryclub
+- Use /jekyll-geometryclub to preserve layout, styling, copy, routes, metadata, and asset usage where sensible
+- Build all new code in the Next.js app only
+- Reuse image assets where possible, but place live assets for the new site in the proper Next.js/public locations
+- Do not redesign unless explicitly asked
+- Preserve URLs and SEO patterns where possible
+- For styling, use CSS Modules for component styling and a small global CSS file for typography and layout defaults.

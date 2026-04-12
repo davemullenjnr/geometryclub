@@ -1,0 +1,122 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Native press-and-swipe on touch: pan-x scrolls the strip; scroll-snap settles each slide */
+.viewport {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  border-radius: 4px;
+  box-shadow: 0 1px 8px 0 rgba(0, 0, 0, 0.25);
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  scrollbar-width: none;
+  touch-action: pan-x pinch-zoom;
+  user-select: none;
+}
+
+.viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.cell {
+  flex: 0 0 100%;
+  width: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  display: block;
+}
+
+.dots {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacer-1);
+  margin-top: var(--spacer-2);
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: 35em) {
+    margin-top: var(--spacer-2-5);
+    gap: var(--spacer-2);
+  }
+}
+
+.dot,
+.dotActive {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 0.2rem;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  @media (min-width: 35em) {
+    width: 3rem;
+    height: 0.3rem;
+  }
+}
+
+.dot {
+  background-color: #d4d4d4;
+}
+
+.dot:hover {
+  background-color: var(--color-grey-mid);
+}
+
+.dotActive {
+  background-color: var(--color-black);
+}
+
+.dot:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* Dark page background: darker inactive grey, active white, taller pills, right-aligned */
+.rootDarkDots {
+  align-items: stretch;
+}
+
+.rootDarkDots .dots {
+  justify-content: flex-end;
+}
+
+.rootDarkDots .dot,
+.rootDarkDots .dotActive {
+  height: 0.35rem;
+}
+
+.rootDarkDots .dot {
+  background-color: var(--color-grey-dark);
+}
+
+.rootDarkDots .dot:hover {
+  background-color: #7a7a7a;
+}
+
+.rootDarkDots .dotActive {
+  background-color: var(--color-white);
+}
+
+.rootDarkDots .dot:focus-visible {
+  outline-color: var(--color-white);
+}

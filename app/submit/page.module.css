@@ -1,0 +1,125 @@
+.page {
+  margin: 0 auto;
+  max-width: 56rem;
+  padding: var(--spacer-3);
+}
+
+.guideSection,
+.introSection,
+.formSection {
+  margin: 0 auto;
+  width: min(100%, 42rem);
+}
+
+.guideSection {
+  margin-bottom: var(--spacer-3);
+}
+
+.introSection {
+  margin-bottom: var(--spacer-3);
+}
+
+.kicker {
+  color: var(--color-grey-mid);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-bottom: var(--spacer-2);
+  text-transform: uppercase;
+}
+
+.introText {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--spacer-3);
+}
+
+.guidelines {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacer-2);
+}
+
+.guidelineBox {
+  border: 1px solid var(--black);
+  border-radius: 4px;
+  margin-bottom: var(--spacer-3);
+  overflow: hidden;
+}
+
+.guidelineTitle {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  line-height: 1;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+}
+
+.guidelineDescription {
+  line-height: 1.5;
+  margin: 0;
+  padding: var(--spacer-2);
+}
+
+.submitForm {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: var(--spacer-2);
+}
+
+.formHeading {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacer-2);
+}
+
+.formCopy {
+  line-height: 1.5;
+  margin-bottom: var(--spacer-2);
+}
+
+.disclaimer {
+  color: var(--color-grey-mid);
+  margin-top: var(--spacer-2);
+}
+
+.textLink {
+  border-bottom: 1px solid currentColor;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.textLink:hover {
+  border-bottom-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--spacer-2);
+  }
+
+  .guideSection,
+  .introSection,
+  .formSection {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .guidelines {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .guidelineBox {
+    margin-bottom: 0;
+    width: 48%;
+  }
+}

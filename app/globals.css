@@ -1,0 +1,181 @@
+/* SF Pro Display (headings) and Graphik (body): self-hosted in public/fonts */
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/SF-Pro-Display-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: url("/fonts/SF-Pro-Display-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro Display";
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url("/fonts/SF-Pro-Display-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Graphik;
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("/fonts/Graphik-Regular-Web.woff") format("woff"),
+    url("/fonts/Graphik-Regular-Web.ttf") format("truetype"),
+    url("/fonts/Graphik-Regular-Web.svg#Graphik-Regular") format("svg");
+}
+
+@font-face {
+  font-family: Graphik;
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("/fonts/Graphik-RegularItalic-Web.woff") format("woff"),
+    url("/fonts/Graphik-RegularItalic-Web.ttf") format("truetype"),
+    url("/fonts/Graphik-RegularItalic-Web.svg#Graphik-RegularItalic")
+      format("svg");
+}
+
+@font-face {
+  font-family: Graphik;
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src:
+    url("/fonts/Graphik-Semibold-Web.woff") format("woff"),
+    url("/fonts/Graphik-Semibold-Web.ttf") format("truetype"),
+    url("/fonts/Graphik-Semibold-Web.svg#Graphik-Semibold") format("svg");
+}
+
+@font-face {
+  font-family: Graphik;
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src:
+    url("/fonts/Graphik-SemiboldItalic-Web.woff") format("woff"),
+    url("/fonts/Graphik-SemiboldItalic-Web.ttf") format("truetype"),
+    url("/fonts/Graphik-SemiboldItalic-Web.svg#Graphik-SemiboldItalic")
+      format("svg");
+}
+
+/* Design tokens (from Jekyll _theme + _variables) */
+:root {
+  --color-white: #fff;
+  --color-grey-light: #f1f1f1;
+  --color-grey-mid: #aaa;
+  --color-grey-dark: #666;
+  --color-black: #111;
+  /* Short aliases (same values; use where shorter names read better in modules) */
+  --white: var(--color-white);
+  --black: var(--color-black);
+
+  --spacer: 0.5rem;
+  /* Integer steps (unchanged): each step doubles the previous multiplier on the base. */
+  --spacer-1: var(--spacer);
+  --spacer-2: calc(var(--spacer) * 2);
+  --spacer-3: calc(var(--spacer) * 4);
+  --spacer-4: calc(var(--spacer) * 8);
+  /* matches Jekyll $spacer-5 — used for py-5 / pb-5 on App page hero and sections */
+  --spacer-5: calc(var(--spacer) * 16);
+  /* Half steps sit between consecutive integer steps (e.g. --spacer-2-5 between --spacer-2 and --spacer-3). */
+  --spacer-1-5: calc(var(--spacer) * 1.5);
+  --spacer-2-5: calc(var(--spacer) * 3);
+  --spacer-3-5: calc(var(--spacer) * 6);
+  --spacer-4-5: calc(var(--spacer) * 12);
+
+  --bp-md: 35em;
+  --bp-lg: 52em;
+  --bp-xl: 96em;
+
+  --container-s: 40em;
+
+  --font-size-base: 16px;
+  --font-size-prose: 20px;
+  --font-body: "Graphik", "Helvetica Neue", Arial, sans-serif;
+  --font-header:
+    "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+  --line-height-body: 1.8;
+}
+
+/* Base reset and typography */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+@media (min-width: 96em) {
+  html {
+    font-size: var(--font-size-prose);
+  }
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-body);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 96em) {
+  body {
+    font-size: var(--font-size-prose);
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-header);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  margin-top: 0;
+}
+
+b,
+strong {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: inherit;
+}
+
+::selection {
+  background: var(--color-grey-dark);
+  color: var(--color-white);
+}
