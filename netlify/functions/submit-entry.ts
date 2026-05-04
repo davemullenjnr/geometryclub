@@ -26,9 +26,9 @@ type SubmissionPayload = {
 };
 
 const REQUIRED_ENV = [
-  "SUPABASE_URL",
+  "NEXT_PUBLIC_SUPABASE_URL",
   "SUPABASE_SERVICE_ROLE_KEY",
-  "SUPABASE_BUCKET",
+  "NEXT_PUBLIC_SUPABASE_BUCKET",
   "POSTMARK_SERVER_TOKEN",
   "POSTMARK_FROM_EMAIL",
   "OWNER_NOTIFICATION_EMAIL",
@@ -105,9 +105,9 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     return json(statusCode, { ok: validationError === "Rejected.", message: validationError });
   }
 
-  const supabaseUrl = process.env.SUPABASE_URL as string;
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
   const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
-  const bucket = process.env.SUPABASE_BUCKET as string;
+  const bucket = process.env.NEXT_PUBLIC_SUPABASE_BUCKET as string;
 
   const supabase = createClient(supabaseUrl, serviceRoleKey, {
     auth: { persistSession: false, autoRefreshToken: false },
@@ -193,9 +193,9 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
   `;
 
   const from = process.env.POSTMARK_FROM_EMAIL as string;
-  // Postmark template aliases (match Postmark UI): submission-notification, submission-confirmation
-  const ownerAlias = process.env.POSTMARK_OWNER_TEMPLATE_ALIAS?.trim();
-  const userAlias = process.env.POSTMARK_USER_TEMPLATE_ALIAS?.trim();
+  // Template aliases are fixed, non-secret identifiers in Postmark.
+  const ownerAlias = "submission-notification";
+  const userAlias = "submission-confirmation";
 
   try {
     await Promise.all([

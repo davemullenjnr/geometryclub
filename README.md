@@ -23,13 +23,10 @@ Set all keys from `.env.example` in Netlify site settings:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `NEXT_PUBLIC_SUPABASE_BUCKET`
-- `SUPABASE_URL`
 - `SUPABASE_SERVICE_ROLE_KEY`
-- `SUPABASE_BUCKET`
 - `POSTMARK_SERVER_TOKEN`
 - `POSTMARK_FROM_EMAIL`
 - `OWNER_NOTIFICATION_EMAIL`
-- (optional) `POSTMARK_OWNER_TEMPLATE_ALIAS` (`submission-notification`), `POSTMARK_USER_TEMPLATE_ALIAS` (`submission-confirmation`) — see `postmark/README.md`
 
 ### 4) Submission flow
 
