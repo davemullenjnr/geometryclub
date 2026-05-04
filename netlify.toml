@@ -2,6 +2,10 @@
   command = "npm run build"
   publish = "out"
 
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # Static HTML export (`output: "export"`): next.config `redirects()` are not applied to `out/`.
 # These mirror next.config.ts so production matches `next dev`.
 

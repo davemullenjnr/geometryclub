@@ -1,0 +1,21 @@
+Geometry Club — submission received
+
+Hi {{name}},
+
+Thanks for submitting. We received your entry and will review it.
+
+Instagram: {{instagram_username}}
+Location:  {{location}}
+Notes:     {{notes}}{{^notes}}(none){{/notes}}
+Image:     {{image_filename}} ({{image_size_mb}} MB)
+
+View your upload:
+{{{image_url}}}
+
+Submission ID: {{submission_id}}
+Submitted at: {{submitted_at}}
+
+— Geometry Club
+https://geometryclub.org
+
+Ref: geometryclub-submission-user-confirmation

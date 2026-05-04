@@ -1,0 +1,85 @@
+.form {
+  display: grid;
+  gap: var(--spacer-2);
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.label {
+  color: var(--color-black);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.input,
+.textarea,
+.fileInput {
+  appearance: none;
+  background: var(--color-white);
+  border: 1px solid #d5d5d5;
+  border-radius: 6px;
+  color: var(--color-black);
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.4;
+  padding: 0.7rem 0.85rem;
+}
+
+.textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.input:focus-visible,
+.textarea:focus-visible,
+.fileInput:focus-visible {
+  border-color: var(--color-black);
+  outline: 2px solid transparent;
+}
+
+.helpText {
+  color: var(--color-grey-dark);
+  font-size: 0.85rem;
+}
+
+.honeypot {
+  display: none;
+}
+
+.submitButton {
+  appearance: none;
+  background: var(--color-black);
+  border: 0;
+  border-radius: 6px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.9rem 1.1rem;
+}
+
+.submitButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.statusMessage,
+.statusError {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.statusMessage {
+  color: #1a5a20;
+}
+
+.statusError {
+  color: #a12222;
+}

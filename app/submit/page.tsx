@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 import { SubmitPhotoRotator } from "@/components/SubmitPhotoRotator";
-import { WufooSubmitForm } from "@/components/WufooSubmitForm";
+import { SubmitForm } from "@/components/SubmitForm";
 import { WebPageJsonLd } from "@/components/SiteJsonLd";
 import { SITE_NAME } from "@/lib/site";
 
@@ -83,7 +83,7 @@ export default function SubmitPage() {
             <p className={styles.formCopy}>
               Please use the form below to submit your photo to Geometry Club.
             </p>
-            <WufooSubmitForm />
+            <SubmitForm />
             <p className={styles.disclaimer}>
               By submitting, you agree for your image to be published on the{" "}
               <a

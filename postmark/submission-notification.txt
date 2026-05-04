@@ -1,0 +1,22 @@
+New Geometry Club submission
+
+Submitter
+---------
+Name:              {{name}}
+Email:             {{email}}
+Instagram:         {{instagram_username}}
+Location:          {{location}}
+Notes:             {{notes}}{{^notes}}(none){{/notes}}
+
+Uploaded image
+--------------
+File: {{image_filename}}
+Size: {{image_size_mb}} MB
+Link: {{{image_url}}}
+
+Record
+------
+Submission ID: {{submission_id}}
+Submitted at:  {{submitted_at}}
+
+Ref: geometryclub-submission-notification
