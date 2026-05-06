@@ -34,6 +34,8 @@ type Status =
 type SubmitResponse = {
   ok: boolean;
   message?: string;
+  detail?: string;
+  hint?: string;
 };
 
 export function SubmitForm() {
@@ -134,9 +136,12 @@ export function SubmitForm() {
 
       const result = (await response.json()) as SubmitResponse;
       if (!response.ok || !result.ok) {
+        const extra = [result.detail, result.hint].filter(Boolean).join(" ");
         setStatus({
           type: "error",
-          message: result.message ?? "Submission failed. Please try again.",
+          message: [result.message ?? "Submission failed. Please try again.", extra]
+            .filter(Boolean)
+            .join(" — "),
         });
         return;
       }

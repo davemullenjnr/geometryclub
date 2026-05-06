@@ -142,7 +142,19 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     .single();
 
   if (insertError) {
-    return json(500, { ok: false, message: "Could not store submission." });
+    console.error("[submit-entry] submissions insert failed", insertError);
+    return json(500, {
+      ok: false,
+      message: "Could not store submission.",
+      detail: insertError.message,
+      hint:
+        insertError.message?.toLowerCase().includes("permission denied") ||
+        insertError.message?.toLowerCase().includes("row-level security")
+          ? "Check Netlify SUPABASE_SERVICE_ROLE_KEY is the service_role key (not anon)."
+          : insertError.message?.includes("relation") && insertError.message?.includes("does not exist")
+            ? "Run supabase/submissions.sql in the Supabase SQL editor (submissions table missing)."
+            : undefined,
+    });
   }
 
   const client = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN as string);
