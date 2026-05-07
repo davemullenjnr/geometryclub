@@ -103,6 +103,17 @@ const validatePayload = (payload: SubmissionPayload): string | null => {
 
 const bytesToMb = (bytes: number) => (bytes / 1024 / 1024).toFixed(2);
 
+const shortSubmissionId = (id: string) => id.replace(/-/g, "").slice(0, 8).toUpperCase();
+
+const formatSubmittedAt = (date: Date) => {
+  const yyyy = date.getUTCFullYear();
+  const mm = String(date.getUTCMonth() + 1).padStart(2, "0");
+  const dd = String(date.getUTCDate()).padStart(2, "0");
+  const hh = String(date.getUTCHours()).padStart(2, "0");
+  const min = String(date.getUTCMinutes()).padStart(2, "0");
+  return `${yyyy} ${mm} ${dd} · ${hh}:${min} UTC`;
+};
+
 export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => {
   if (event.httpMethod !== "POST") {
     return json(405, { ok: false, message: "Method not allowed." });
@@ -193,9 +204,11 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     notes: sanitize(payload.notes ?? ""),
   };
 
-  const submittedAt = new Date().toISOString();
+  const submittedAtDate = new Date();
+  const submittedAt = formatSubmittedAt(submittedAtDate);
+  const submissionId = shortSubmissionId(insertData.id);
   const templateModel = {
-    submission_id: insertData.id,
+    submission_id: submissionId,
     name: clean.name,
     email: clean.email,
     instagram_username: clean.instagramUsername,
@@ -209,7 +222,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
 
   const ownerHtml = `
     <h2>New Geometry Club submission</h2>
-    <p><strong>Submission ID:</strong> ${insertData.id}</p>
+    <p><strong>Submission ID:</strong> ${submissionId}</p>
     <p><strong>Instagram Username:</strong> ${clean.instagramUsername}</p>
     <p><strong>Name:</strong> ${clean.name}</p>
     <p><strong>Email:</strong> ${clean.email}</p>

@@ -18,5 +18,3 @@ Record
 ------
 Submission ID: {{submission_id}}
 Submitted at:  {{submitted_at}}
-
-Ref: geometryclub-submission-notification

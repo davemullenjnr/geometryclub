@@ -17,5 +17,3 @@ Submitted at: {{submitted_at}}
 
 — Geometry Club
 https://geometryclub.org
-
-Ref: geometryclub-submission-user-confirmation
