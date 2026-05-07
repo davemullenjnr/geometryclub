@@ -23,7 +23,8 @@ Set all keys from `.env.example` in Netlify site settings:
 - `NEXT_PUBLIC_SUPABASE_URL`
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
 - `NEXT_PUBLIC_SUPABASE_BUCKET`
-- `SUPABASE_SERVICE_ROLE_KEY`
+- (if the submit function says URL/bucket are missing) `SUPABASE_URL` and `SUPABASE_BUCKET` with the **same** values as above — some Netlify setups only inject `NEXT_PUBLIC_*` at static build time, not inside Functions
+- `SUPABASE_SECRET_KEY` (modern `sb_secret_…` from Supabase **API** settings), or legacy `SUPABASE_SERVICE_ROLE_KEY` (service_role JWT) — never the publishable/anon key
 - `POSTMARK_SERVER_TOKEN`
 - `POSTMARK_FROM_EMAIL`
 - `OWNER_NOTIFICATION_EMAIL`

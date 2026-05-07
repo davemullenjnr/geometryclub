@@ -25,14 +25,19 @@ type SubmissionPayload = {
   honey?: string;
 };
 
-const REQUIRED_ENV = [
-  "NEXT_PUBLIC_SUPABASE_URL",
-  "SUPABASE_SERVICE_ROLE_KEY",
-  "NEXT_PUBLIC_SUPABASE_BUCKET",
-  "POSTMARK_SERVER_TOKEN",
-  "POSTMARK_FROM_EMAIL",
-  "OWNER_NOTIFICATION_EMAIL",
-] as const;
+/**
+ * Netlify Functions sometimes do not receive NEXT_PUBLIC_* vars (build-only / wrong scope).
+ * Use the same values as SUPABASE_URL and SUPABASE_BUCKET for the function only.
+ */
+const supabaseProjectUrl = () =>
+  process.env.NEXT_PUBLIC_SUPABASE_URL?.trim() || process.env.SUPABASE_URL?.trim() || "";
+
+const supabaseStorageBucket = () =>
+  process.env.NEXT_PUBLIC_SUPABASE_BUCKET?.trim() || process.env.SUPABASE_BUCKET?.trim() || "";
+
+/** Supabase server key: modern `sb_secret_...` or legacy `service_role` JWT — not the publishable/anon key */
+const serverSupabaseKey = () =>
+  process.env.SUPABASE_SECRET_KEY?.trim() || process.env.SUPABASE_SERVICE_ROLE_KEY?.trim() || "";
 
 const ALLOWED_IMAGE_TYPES = new Set(["image/jpeg", "image/png", "image/webp"]);
 const MAX_FILE_BYTES = 50 * 1024 * 1024;
@@ -43,7 +48,22 @@ const json = (statusCode: number, payload: Record<string, unknown>): NetlifyResp
   body: JSON.stringify(payload),
 });
 
-const hasMissingEnv = () => REQUIRED_ENV.some((key) => !process.env[key]);
+const missingEnvReport = (): string[] => {
+  const missing: string[] = [];
+  if (!supabaseProjectUrl()) {
+    missing.push("NEXT_PUBLIC_SUPABASE_URL or SUPABASE_URL");
+  }
+  if (!supabaseStorageBucket()) {
+    missing.push("NEXT_PUBLIC_SUPABASE_BUCKET or SUPABASE_BUCKET");
+  }
+  if (!serverSupabaseKey()) {
+    missing.push("SUPABASE_SECRET_KEY or SUPABASE_SERVICE_ROLE_KEY");
+  }
+  if (!process.env.POSTMARK_SERVER_TOKEN?.trim()) missing.push("POSTMARK_SERVER_TOKEN");
+  if (!process.env.POSTMARK_FROM_EMAIL?.trim()) missing.push("POSTMARK_FROM_EMAIL");
+  if (!process.env.OWNER_NOTIFICATION_EMAIL?.trim()) missing.push("OWNER_NOTIFICATION_EMAIL");
+  return missing;
+};
 
 const sanitize = (value: string) => value.replace(/[<>&"]/g, "");
 
@@ -88,8 +108,14 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     return json(405, { ok: false, message: "Method not allowed." });
   }
 
-  if (hasMissingEnv()) {
-    return json(500, { ok: false, message: "Server is missing required environment variables." });
+  const missing = missingEnvReport();
+  if (missing.length > 0) {
+    console.error("[submit-entry] missing env:", missing.join(", "));
+    return json(500, {
+      ok: false,
+      message: "Server is missing required environment variables.",
+      detail: missing.join(", "),
+    });
   }
 
   let payload: SubmissionPayload;
@@ -105,11 +131,11 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     return json(statusCode, { ok: validationError === "Rejected.", message: validationError });
   }
 
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL as string;
-  const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY as string;
-  const bucket = process.env.NEXT_PUBLIC_SUPABASE_BUCKET as string;
+  const supabaseUrl = supabaseProjectUrl();
+  const secretKey = serverSupabaseKey();
+  const bucket = supabaseStorageBucket();
 
-  const supabase = createClient(supabaseUrl, serviceRoleKey, {
+  const supabase = createClient(supabaseUrl, secretKey, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
 
@@ -150,7 +176,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
       hint:
         insertError.message?.toLowerCase().includes("permission denied") ||
         insertError.message?.toLowerCase().includes("row-level security")
-          ? "Check Netlify SUPABASE_SERVICE_ROLE_KEY is the service_role key (not anon)."
+          ? "Use SUPABASE_SECRET_KEY (sb_secret_…) or legacy SUPABASE_SERVICE_ROLE_KEY (service_role JWT)—never NEXT_PUBLIC_SUPABASE_ANON_KEY / publishable."
           : insertError.message?.includes("relation") && insertError.message?.includes("does not exist")
             ? "Run supabase/submissions.sql in the Supabase SQL editor (submissions table missing)."
             : undefined,
