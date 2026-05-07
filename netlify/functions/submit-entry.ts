@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js";
-import postmark, { TemplatedMessage } from "postmark";
+import { ServerClient, TemplatedMessage } from "postmark";
 
 type NetlifyEvent = {
   httpMethod: string;
@@ -183,7 +183,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
     });
   }
 
-  const client = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN as string);
+  const client = new ServerClient(process.env.POSTMARK_SERVER_TOKEN as string);
 
   const clean = {
     instagramUsername: sanitize(payload.instagramUsername),
