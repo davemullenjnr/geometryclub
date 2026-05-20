@@ -3,7 +3,7 @@ create extension if not exists "pgcrypto";
 create table if not exists public.submissions (
   id uuid primary key default gen_random_uuid(),
   created_at timestamptz not null default now(),
-  instagram_username text not null,
+  instagram_username text not null default '',
   name text not null,
   email text not null,
   location text not null,

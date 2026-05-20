@@ -1,0 +1,44 @@
+/* Matches postmark/submission-confirmation.html BMAC block (#f7f2e3, 16px padding, 44px icon) */
+.ad {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #f7f2e3;
+}
+
+.iconLink {
+  flex-shrink: 0;
+  line-height: 0;
+  text-decoration: none;
+}
+
+.icon {
+  display: block;
+  width: 44px;
+  height: 44px;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #292727;
+
+  @media (min-width: 35em) {
+    font-size: 0.9rem;
+  }
+}
+
+.link {
+  color: #292727;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  text-decoration-thickness: 2px;
+}

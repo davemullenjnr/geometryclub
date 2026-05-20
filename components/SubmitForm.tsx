@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 import { createClient } from "@supabase/supabase-js";
 import styles from "./SubmitForm.module.css";
 
@@ -28,7 +29,6 @@ const MAX_FILE_BYTES = 50 * 1024 * 1024;
 type Status =
   | { type: "idle"; message: string }
   | { type: "submitting"; message: string }
-  | { type: "success"; message: string }
   | { type: "error"; message: string };
 
 type SubmitResponse = {
@@ -39,6 +39,7 @@ type SubmitResponse = {
 };
 
 export function SubmitForm() {
+  const router = useRouter();
   const [fields, setFields] = useState<FormState>(INITIAL_FORM_STATE);
   const [file, setFile] = useState<File | null>(null);
   const [status, setStatus] = useState<Status>({ type: "idle", message: "" });
@@ -64,7 +65,7 @@ export function SubmitForm() {
       return "Submit form is not configured yet. Please try again later.";
     }
 
-    if (!fields.instagramUsername || !fields.name || !fields.email || !fields.location) {
+    if (!fields.name || !fields.email || !fields.location) {
       return "Please complete all required fields.";
     }
 
@@ -146,12 +147,7 @@ export function SubmitForm() {
         return;
       }
 
-      setFields(INITIAL_FORM_STATE);
-      setFile(null);
-      setStatus({
-        type: "success",
-        message: "Thanks for your submission! Please check your email for confirmation.",
-      });
+      router.replace("/submit/confirmation");
     } catch {
       setStatus({ type: "error", message: "Something went wrong. Please try again." });
     }
@@ -160,12 +156,11 @@ export function SubmitForm() {
   return (
     <form className={styles.form} onSubmit={onSubmit} noValidate>
       <label className={styles.field}>
-        <span className={styles.label}>Instagram Username *</span>
+        <span className={styles.label}>Instagram Username</span>
         <input
           className={styles.input}
           type="text"
           name="instagramUsername"
-          required
           value={fields.instagramUsername}
           onChange={(event) => updateField("instagramUsername", event.target.value)}
         />
@@ -249,11 +244,8 @@ export function SubmitForm() {
         {status.type === "submitting" ? "Submitting..." : "Submit"}
       </button>
 
-      {status.message ? (
-        <p
-          className={status.type === "error" ? styles.statusError : styles.statusMessage}
-          role={status.type === "error" ? "alert" : "status"}
-        >
+      {status.type === "error" && status.message ? (
+        <p className={styles.statusError} role="alert">
           {status.message}
         </p>
       ) : null}

@@ -13,7 +13,7 @@ type NetlifyResponse = {
 };
 
 type SubmissionPayload = {
-  instagramUsername: string;
+  instagramUsername?: string;
   name: string;
   email: string;
   location: string;
@@ -70,13 +70,7 @@ const sanitize = (value: string) => value.replace(/[<>&"]/g, "");
 const isEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
 const validatePayload = (payload: SubmissionPayload): string | null => {
-  if (
-    !payload.instagramUsername ||
-    !payload.name ||
-    !payload.email ||
-    !payload.location ||
-    !payload.imagePath
-  ) {
+  if (!payload.name || !payload.email || !payload.location || !payload.imagePath) {
     return "Missing required fields.";
   }
 
@@ -159,11 +153,12 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
   }
 
   const imageUrl = signedData.signedUrl;
+  const instagramUsername = (payload.instagramUsername ?? "").trim();
 
   const { data: insertData, error: insertError } = await supabase
     .from("submissions")
     .insert({
-      instagram_username: payload.instagramUsername,
+      instagram_username: instagramUsername,
       name: payload.name,
       email: payload.email,
       location: payload.location,
@@ -197,7 +192,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
   const client = new ServerClient(process.env.POSTMARK_SERVER_TOKEN as string);
 
   const clean = {
-    instagramUsername: sanitize(payload.instagramUsername),
+    instagramUsername: sanitize(instagramUsername),
     name: sanitize(payload.name),
     email: sanitize(payload.email),
     location: sanitize(payload.location),
@@ -222,7 +217,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
 
   const ownerHtml = `
     <h2>New Geometry Club submission</h2>
-    <p><strong>Submission ID:</strong> ${submissionId}</p>
+    <p><strong>ID:</strong> ${submissionId}</p>
     <p><strong>Instagram Username:</strong> ${clean.instagramUsername}</p>
     <p><strong>Name:</strong> ${clean.name}</p>
     <p><strong>Email:</strong> ${clean.email}</p>
@@ -272,7 +267,7 @@ export const handler = async (event: NetlifyEvent): Promise<NetlifyResponse> => 
         : client.sendEmail({
             From: from,
             To: payload.email,
-            Subject: "Geometry Club submission received",
+            Subject: "Your Geometry Club Submission",
             HtmlBody: userHtml,
           }),
     ]);

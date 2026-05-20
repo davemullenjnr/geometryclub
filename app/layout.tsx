@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import layoutStyles from "./layout.module.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import { SiteFooter } from "@/components/SiteFooter";
 import SiteJsonLd from "@/components/SiteJsonLd";
 import {
   DEFAULT_DESCRIPTION,
@@ -52,7 +52,7 @@ export default function RootLayout({
         <SiteJsonLd />
         <Header />
         <main className={layoutStyles.main}>{children}</main>
-        <Footer />
+        <SiteFooter />
       </body>
     </html>
   );

@@ -12,5 +12,7 @@ export const SITE_AUTHOR = "Dave Mullen Jnr";
 
 export const INSTAGRAM_URL = "https://instagram.com/geometryclub";
 
+export const BMAC_URL = "https://buymeacoffee.com/davemullenjnr";
+
 export const IOS_APP_STORE_URL =
   "https://itunes.apple.com/app/geometry-club/id1185322655?ls=1&mt=8";

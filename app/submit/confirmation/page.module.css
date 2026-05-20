@@ -1,0 +1,60 @@
+.page {
+  margin: 0 auto;
+  max-width: 56rem;
+  padding: var(--spacer-5);
+}
+
+.content {
+  margin: 0 auto;
+  width: min(100%, 42rem);
+}
+
+.heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: var(--spacer-2);
+}
+
+.lead {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: var(--spacer-2);
+
+  @media (min-width: 35em) {
+    font-size: 1.125rem;
+  }
+}
+
+.body {
+  color: var(--color-grey-dark);
+  line-height: 1.5;
+  margin-bottom: var(--spacer-3);
+  font-size: 0.85rem;
+
+  @media (min-width: 35em) {
+    font-size: 1rem;
+  }
+}
+
+.textLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(41, 39, 39, 0.45);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+
+.textLink:hover {
+  text-decoration-color: var(--color-black);
+}
+
+.bmac {
+  margin-top: var(--spacer-3);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--spacer-4) var(--spacer-2);
+  }
+}

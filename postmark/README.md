@@ -15,6 +15,15 @@ These files are meant to be copied into **Postmark** as **Layout** and **Standar
 
 In Postmark, set each **Standard** template’s **Layout template** to your Geometry Club layout. Set aliases exactly to `submission-notification` and `submission-confirmation`.
 
+Set the `submission-confirmation` template subject to: `Your Geometry Club Submission`.
+
+Both HTML templates share the same bordered detail tables, typography, and BMAC
+footer block. The confirmation email uses the existing asset
+`public/logo/buy-me-a-coffee.svg` (same as the site footer). After deploy it is
+available at `https://geometryclub.org/logo/buy-me-a-coffee.svg`. Some older
+email clients do not render SVG images well; if the icon disappears in Outlook,
+add a PNG and point the template `img` `src` at that URL instead.
+
 ## Template model (variables)
 
 Use the same keys in the Postmark **Template test** panel and in `TemplateModel`.
@@ -24,7 +33,7 @@ Use the same keys in the Postmark **Template test** panel and in `TemplateModel`
 | `submission_id` | UUID from `submissions` table |
 | `name` | Submitter display name |
 | `email` | Submitter email |
-| `instagram_username` | Instagram handle |
+| `instagram_username` | Instagram handle (optional; empty shows as “None” in emails) |
 | `location` | Location string |
 | `notes` | Optional notes (empty section shows “None” where applicable) |
 | `image_filename` | Original file name |
