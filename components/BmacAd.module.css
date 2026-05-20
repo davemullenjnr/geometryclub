@@ -4,9 +4,13 @@
   align-items: center;
   gap: 16px;
   margin: 0;
-  padding: 16px;
+  padding: 24px;
   border-radius: 4px;
   background-color: #f7f2e3;
+
+  @media (min-width: 768px) {
+    padding: 32px;
+  }
 }
 
 .iconLink {

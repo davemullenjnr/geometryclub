@@ -10,10 +10,14 @@
 }
 
 .heading {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
   line-height: 1.15;
   margin-bottom: var(--spacer-2);
+
+  @media (min-width: 768px) {
+    margin-bottom: var(--spacer-3);
+  }
 }
 
 .lead {
@@ -21,7 +25,7 @@
   line-height: 1.5;
   margin-bottom: var(--spacer-2);
 
-  @media (min-width: 35em) {
+  @media (min-width: 768px) {
     font-size: 1.125rem;
   }
 }
@@ -32,8 +36,9 @@
   margin-bottom: var(--spacer-3);
   font-size: 0.85rem;
 
-  @media (min-width: 35em) {
+  @media (min-width: 768px) {
     font-size: 1rem;
+    margin-bottom: var(--spacer-3-5);
   }
 }
 
